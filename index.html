@@ -8,12 +8,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <!-- Conectar CSS externo -->
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* --- MENU RESPONSIVE --- */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* El menú lateral oculto */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: white;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+      transition: left 0.3s ease;
+      padding: 2rem 1rem;
+      z-index: 1000;
+    }
+
+    .side-menu.active {
+      left: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      margin: 1rem 0;
+      font-weight: 600;
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Para celulares */
+    @media (max-width: 768px) {
+      header nav {
+        display: none; /* ocultar menú normal */
+      }
+      .menu-toggle {
+        display: block;
+        color: black;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Header -->
   <header>
     <div class="header-inner">
+      <button class="menu-toggle">☰</button>
       <div class="logo">⚽ Perspectiva</div>
       <nav>
         <a href="#inicio">Inicio</a>
@@ -25,6 +74,16 @@
       </nav>
     </div>
   </header>
+
+  <!-- Menú lateral (solo móvil) -->
+  <div class="side-menu" id="sideMenu">
+    <a href="#inicio">Inicio</a>
+    <a href="#opiniones">Opiniones</a>
+    <a href="#internacional">Internacional</a>
+    <a href="#colombiano">Colombiano</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#contacto">Contacto</a>
+  </div>
 
   <!-- Opinión destacada -->
   <section class="destacada">
@@ -58,7 +117,7 @@
     <aside>
       <h3>📰 Opiniones destacadas</h3>
       <ul>
-        <li><a href="INDEPENDIENTE VS U DE CHILE.html">🚨 Incidentes en el partido Independiente vs Universidad de Chile</a></li>
+        <li><a href="#">🚨 Incidentes en el partido Independiente vs Universidad de Chile</a></li>
         <li><a href="#">🔵👟 “Comunidad se queda sin Zapatos Tras protesta en el Campin: Millonarios en Crisis”</a></li>
         <li><a href="#"></a></li>
       </ul>
@@ -94,6 +153,14 @@
     <p>© 2025 Perspectiva</p>
   </footer>
 
+  <!-- Script menú -->
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const sideMenu = document.getElementById('sideMenu');
+
+    toggle.addEventListener('click', () => {
+      sideMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
-
