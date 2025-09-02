@@ -10,49 +10,60 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* --- MENU RESPONSIVE --- */
+    /* --- Estilos menú móvil --- */
     .menu-toggle {
       display: none;
       font-size: 2rem;
+      cursor: pointer;
       background: none;
       border: none;
-      cursor: pointer;
+      color: #333;
     }
 
-    /* El menú lateral oculto */
-    .side-menu {
+    .mobile-menu {
+      height: 100%;
+      width: 0;
       position: fixed;
       top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background: white;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      transition: left 0.3s ease;
-      padding: 2rem 1rem;
+      left: 0;
+      background-color: white;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.2);
       z-index: 1000;
     }
 
-    .side-menu.active {
-      left: 0;
-    }
-
-    .side-menu a {
+    .mobile-menu a {
       display: block;
-      margin: 1rem 0;
-      font-weight: 600;
+      padding: 12px 24px;
       text-decoration: none;
-      color: black;
+      font-size: 18px;
+      color: #333;
+      font-weight: 600;
     }
 
-    /* Para celulares */
+    .mobile-menu a:hover {
+      background: #f2f2f2;
+    }
+
+    .mobile-menu .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 2rem;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* Mostrar botón en móvil */
     @media (max-width: 768px) {
       header nav {
-        display: none; /* ocultar menú normal */
+        display: none;
       }
       .menu-toggle {
         display: block;
-        color: black;
       }
     }
   </style>
@@ -62,7 +73,6 @@
   <!-- Header -->
   <header>
     <div class="header-inner">
-      <button class="menu-toggle">☰</button>
       <div class="logo">⚽ Perspectiva</div>
       <nav>
         <a href="#inicio">Inicio</a>
@@ -72,17 +82,20 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#contacto">Contacto</a>
       </nav>
+      <!-- Botón menú móvil -->
+      <button class="menu-toggle" onclick="openMenu()">☰</button>
     </div>
   </header>
 
-  <!-- Menú lateral (solo móvil) -->
-  <div class="side-menu" id="sideMenu">
-    <a href="#inicio">Inicio</a>
-    <a href="#opiniones">Opiniones</a>
-    <a href="#internacional">Internacional</a>
-    <a href="#colombiano">Colombiano</a>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#contacto">Contacto</a>
+  <!-- Menú móvil lateral -->
+  <div id="mobileMenu" class="mobile-menu">
+    <span class="close-btn" onclick="closeMenu()">×</span>
+    <a href="#inicio" onclick="closeMenu()">Inicio</a>
+    <a href="#opiniones" onclick="closeMenu()">Opiniones</a>
+    <a href="#internacional" onclick="closeMenu()">Internacional</a>
+    <a href="#colombiano" onclick="closeMenu()">Colombiano</a>
+    <a href="#sobre-mi" onclick="closeMenu()">Sobre mí</a>
+    <a href="#contacto" onclick="closeMenu()">Contacto</a>
   </div>
 
   <!-- Opinión destacada -->
@@ -155,12 +168,12 @@
 
   <!-- Script menú -->
   <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const sideMenu = document.getElementById('sideMenu');
-
-    toggle.addEventListener('click', () => {
-      sideMenu.classList.toggle('active');
-    });
+    function openMenu() {
+      document.getElementById("mobileMenu").style.width = "250px";
+    }
+    function closeMenu() {
+      document.getElementById("mobileMenu").style.width = "0";
+    }
   </script>
 </body>
 </html>
