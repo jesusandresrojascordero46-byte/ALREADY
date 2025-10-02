@@ -187,6 +187,20 @@
   }
   .close-btn { display: none; }
 }
+    /* Botón hamburguesa */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+}
+
+/* Mostrar solo en móvil */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -257,6 +271,7 @@ closeBtn.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
