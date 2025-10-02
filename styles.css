@@ -171,9 +171,13 @@ aside li{ margin-bottom:10px; }
     display: block;
   }
 }
+.menu-toggle {
+  margin-left: auto;
+}
 
 
 
 /* FOOTER */
 footer{ margin:40px 0 20px; text-align:center; color:var(--muted); }
+
 
