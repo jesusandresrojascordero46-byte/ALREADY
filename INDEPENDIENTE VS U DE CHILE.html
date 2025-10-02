@@ -187,19 +187,59 @@
   }
   .close-btn { display: none; }
 }
-    /* Botón hamburguesa */
+/* Botón hamburguesa */
 .menu-toggle {
   font-size: 28px;
   cursor: pointer;
-  display: none; /* Oculto por defecto */
+  display: none;   /* oculto por defecto */
+  position: absolute; /* para pegarlo al borde */
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* encima de todo */
 }
 
-/* Mostrar solo en móvil */
+/* Panel lateral en móvil */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;   /* oculto completamente fuera de pantalla */
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0; /* aparece */
+}
+
+/* Solo mostrar botón en móvil */
 @media (max-width: 900px) {
   .menu-toggle {
     display: block;
   }
 }
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+
 
   </style>
 </head>
@@ -217,6 +257,7 @@
     <a href="#">Contacto</a>
   </nav>
 </header>
+
 
   <!-- Contenido y barra lateral -->
   <div class="container">
@@ -271,6 +312,7 @@ closeBtn.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
