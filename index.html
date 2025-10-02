@@ -71,22 +71,24 @@
 <body>
 
   <!-- Header -->
-  <header>
-    <div class="header-inner">
-      <div class="logo">⚽ Perspectiva</div>
-      <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#opiniones">Opiniones</a>
-        <a href="#internacional">Internacional</a>
-        <a href="#colombiano">Colombiano</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="Escritos.html">Otros</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <!-- Botón menú móvil -->
-      <button class="menu-toggle" onclick="openMenu()">☰</button>
-    </div>
-  </header>
+   <header>
+  <div class="header-inner">
+    <div class="logo">⚽ Perspectiva</div>
+    <!-- Botón hamburguesa ahora a la derecha -->
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <nav id="main-menu" class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#internacional">Internacional</a>
+      <a href="#colombiano">Colombiano</a>
+      <a href="Escritos.html">Escritos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+      <span class="close-btn" onclick="toggleMenu()">✖</span>
+    </nav>
+  </div>
+</header>
+
 
   <!-- Menú móvil lateral -->
   <div id="mobileMenu" class="mobile-menu">
@@ -179,5 +181,3 @@
   </script>
 </body>
 </html>
-
-
