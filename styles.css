@@ -105,19 +105,75 @@ aside li{ margin-bottom:10px; }
 .contact-form button{ background:var(--accent); color:#fff; border:none; padding:14px; font-size:16px; font-weight:600; border-radius:8px; cursor:pointer; transition:all .2s ease; width:fit-content; align-self:center; }
 .contact-form button:hover{ background:var(--accent-hover); }
 
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Botón hamburguesa */
+/* Menú hamburguesa en móviles */
 .menu-toggle {
   display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #111;
+}
+
+/* Menú lateral oculto */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -260px; /* empieza fuera de pantalla */
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
+
+.menu.active {
+  right: 0; /* cuando se abre */
+}
+
+/* Botón cerrar dentro del menú */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 24px;
   cursor: pointer;
 }
 
+/* En pantallas grandes: menú normal */
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .menu a { font-size: 16px; }
+  .menu-toggle, .close-btn { display: none; }
+}
+
+/* En pantallas pequeñas: mostrar botón ☰ */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
 
 /* FOOTER */
 footer{ margin:40px 0 20px; text-align:center; color:var(--muted); }
+
