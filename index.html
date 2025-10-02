@@ -6,7 +6,6 @@
   <title>Perspectiva</title>
   <meta name="description" content="Perspectiva: Opinión y noticias del fútbol desde otro ángulo." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <!-- Conectar CSS externo -->
   <link rel="stylesheet" href="styles.css">
 
   <style>
@@ -25,12 +24,12 @@
       width: 0;
       position: fixed;
       top: 0;
-      left: 0;
+      right: 0; /* 👉 abre desde la derecha */
       background-color: white;
       overflow-x: hidden;
       transition: 0.3s;
       padding-top: 60px;
-      box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+      box-shadow: -2px 0 8px rgba(0,0,0,0.2);
       z-index: 1000;
     }
 
@@ -50,7 +49,7 @@
     .mobile-menu .close-btn {
       position: absolute;
       top: 20px;
-      right: 25px;
+      left: 25px;
       font-size: 2rem;
       text-decoration: none;
       color: #333;
@@ -71,36 +70,22 @@
 <body>
 
   <!-- Header -->
-   <header>
-  <div class="header-inner">
-    <div class="logo">⚽ Perspectiva</div>
-    <!-- Botón hamburguesa ahora a la derecha -->
-    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-    <nav id="main-menu" class="menu">
-      <a href="index.html">Inicio</a>
-      <a href="#opiniones">Opiniones</a>
-      <a href="#internacional">Internacional</a>
-      <a href="#colombiano">Colombiano</a>
-      <a href="Escritos.html">Escritos</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#contacto">Contacto</a>
-      <span class="close-btn" onclick="toggleMenu()">✖</span>
-    </nav>
-  </div>
-</header>
-  <script>
-  function toggleMenu() {
-    document.getElementById("main-menu").classList.toggle("active");
-  }
-</script>
+  <header>
+    <div class="header-inner">
+      <div class="logo">⚽ Perspectiva</div>
+      <!-- Botón hamburguesa ahora a la derecha -->
+      <span class="menu-toggle" onclick="openMenu()">☰</span>
+    </div>
+  </header>
 
   <!-- Menú móvil lateral -->
   <div id="mobileMenu" class="mobile-menu">
     <span class="close-btn" onclick="closeMenu()">×</span>
-    <a href="#inicio" onclick="closeMenu()">Inicio</a>
+    <a href="index.html" onclick="closeMenu()">Inicio</a>
     <a href="#opiniones" onclick="closeMenu()">Opiniones</a>
     <a href="#internacional" onclick="closeMenu()">Internacional</a>
     <a href="#colombiano" onclick="closeMenu()">Colombiano</a>
+    <a href="Escritos.html" onclick="closeMenu()">Escritos</a>
     <a href="#sobre-mi" onclick="closeMenu()">Sobre mí</a>
     <a href="#contacto" onclick="closeMenu()">Contacto</a>
   </div>
@@ -131,7 +116,6 @@
           <a href="#" class="readmore">Seguir leyendo →</a>
         </div>
       </article>
-      
     </section>
 
     <!-- Sidebar -->
@@ -140,7 +124,6 @@
       <ul>
         <li><a href="#">🚨 Incidentes en el partido Independiente vs Universidad de Chile</a></li>
         <li><a href="#">🔵👟 “Comunidad se queda sin Zapatos Tras protesta en el Campin: Millonarios en Crisis”</a></li>
-        <li><a href="#"></a></li>
       </ul>
     </aside>
   </main>
@@ -185,4 +168,3 @@
   </script>
 </body>
 </html>
-
