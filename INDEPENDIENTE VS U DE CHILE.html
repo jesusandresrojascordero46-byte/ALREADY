@@ -150,16 +150,17 @@
 <body>
 
   <!-- Barra superior -->
-  <header>
-    <h1>⚽ Perspectiva</h1>
-    <span class="menu-toggle">☰</span>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="#">Noticias</a>
-      <a href="#">Opinión</a>
-      <a href="#">Contacto</a>
-    </nav>
-  </header>
+<header>
+  <h1>⚽ Perspectiva</h1>
+  <span class="menu-toggle">☰</span>
+  <nav class="menu">
+    <span class="close-btn">✖</span>
+    <a href="index.html">Inicio</a>
+    <a href="#">Noticias</a>
+    <a href="#">Opinión</a>
+    <a href="#">Contacto</a>
+  </nav>
+</header>
 
   <!-- Contenido y barra lateral -->
   <div class="container">
@@ -198,16 +199,23 @@
     </aside>
   </div>
 
-  <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu');
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const closeBtn = document.querySelector('.close-btn');
 
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  });
+menuToggle.addEventListener('click', () => {
+  menu.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  menu.classList.remove('active');
+});
 </script>
+
 </body>
 </html>
+
 
 
 
