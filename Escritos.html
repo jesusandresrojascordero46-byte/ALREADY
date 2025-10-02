@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perspectiva</title>
+  <meta name="description" content="Perspectiva: Opinión y noticias del fútbol desde otro ángulo." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Conectar CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* --- Estilos menú móvil --- */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #333;
+    }
+
+    .mobile-menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: white;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .mobile-menu a:hover {
+      background: #f2f2f2;
+    }
+
+    .mobile-menu .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 2rem;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* Mostrar botón en móvil */
+    @media (max-width: 768px) {
+      header nav {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">⚽ Perspectiva</div>
+      <nav>
+        <a href="Index.html">Inicio</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#internacional">Internacional</a>
+        <a href="#colombiano">Colombiano</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="Escritos.html">Otros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <!-- Botón menú móvil -->
+      <button class="menu-toggle" onclick="openMenu()">☰</button>
+    </div>
+  </header>
+
+  <!-- Menú móvil lateral -->
+  <div id="mobileMenu" class="mobile-menu">
+    <span class="close-btn" onclick="closeMenu()">×</span>
+    <a href="#inicio" onclick="closeMenu()">Inicio</a>
+    <a href="#opiniones" onclick="closeMenu()">Opiniones</a>
+    <a href="#internacional" onclick="closeMenu()">Internacional</a>
+    <a href="#colombiano" onclick="closeMenu()">Colombiano</a>
+    <a href="#sobre-mi" onclick="closeMenu()">Sobre mí</a>
+    <a href="#contacto" onclick="closeMenu()">Contacto</a>
+  </div>
+
+
+
+  <!-- Contenido principal -->
+  <main>
+    <!-- Noticias/opiniones -->
+    <section id="opiniones" class="grid">
+
+     <article>
+        <img class="cover" src="https://cdn.pixabay.com/photo/2023/04/26/08/07/chairs-7951845_1280.jpg" alt="Conferencia" />
+        <div class="content">
+          <div class="meta">17 de Septiembre de 2025 <span class="tag">Escrito</span></div>
+          <h2>La Catarsis como Escritura</h2>
+          <p></p>
+          <a href="CONFERENCIA.html" class="readmore">Seguir leyendo →</a>
+        </div>
+      </article>
+
+       <article>
+        <img class="cover" src="https://cdn.pixabay.com/photo/2019/06/07/02/12/book-4257405_640.jpg" alt="Poemas" />
+        <div class="content">
+          <div class="meta">30 de Septiembre de 2025 <span class="tag">Poema</span></div>
+          <h2>Mis Poemas</h2>
+          <p></p>
+          <a href="POEMAS.html" class="readmore">Seguir leyendo →</a>
+        </div>
+      </article> 
+      
+    </section>
+
+ 
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Perspectiva</p>
+  </footer>
+
+  <!-- Script menú -->
+  <script>
+    function openMenu() {
+      document.getElementById("mobileMenu").style.width = "250px";
+    }
+    function closeMenu() {
+      document.getElementById("mobileMenu").style.width = "0";
+    }
+  </script>
+</body>
+</html>
+
