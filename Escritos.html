@@ -25,12 +25,12 @@
       width: 0;
       position: fixed;
       top: 0;
-      left: 0;
+      right: 0; /* 👉 abre desde la derecha */
       background-color: white;
       overflow-x: hidden;
       transition: 0.3s;
       padding-top: 60px;
-      box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+      box-shadow: -2px 0 8px rgba(0,0,0,0.2);
       z-index: 1000;
     }
 
@@ -50,7 +50,7 @@
     .mobile-menu .close-btn {
       position: absolute;
       top: 20px;
-      right: 25px;
+      left: 25px;
       font-size: 2rem;
       text-decoration: none;
       color: #333;
@@ -74,17 +74,8 @@
   <header>
     <div class="header-inner">
       <div class="logo">⚽ Perspectiva</div>
-      <nav>
-        <a href="index.html">Inicio</a>
-        <a href="#opiniones">Opiniones</a>
-        <a href="#internacional">Internacional</a>
-        <a href="#colombiano">Colombiano</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="Escritos.html">Otros</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <!-- Botón menú móvil -->
-      <button class="menu-toggle" onclick="openMenu()">☰</button>
+      <!-- Botón hamburguesa ahora a la derecha -->
+      <span class="menu-toggle" onclick="openMenu()">☰</span>
     </div>
   </header>
 
@@ -95,11 +86,10 @@
     <a href="#opiniones" onclick="closeMenu()">Opiniones</a>
     <a href="#internacional" onclick="closeMenu()">Internacional</a>
     <a href="#colombiano" onclick="closeMenu()">Colombiano</a>
+    <a href="Escritos.html" onclick="closeMenu()">Escritos</a>
     <a href="#sobre-mi" onclick="closeMenu()">Sobre mí</a>
-    <a href="#Escritos" onclick="closeMenu()">Escritos</a>
     <a href="#contacto" onclick="closeMenu()">Contacto</a>
   </div>
-
 
 
   <!-- Contenido principal -->
@@ -147,6 +137,7 @@
   </script>
 </body>
 </html>
+
 
 
 
