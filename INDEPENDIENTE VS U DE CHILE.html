@@ -145,6 +145,48 @@
   }
 }
 
+    /* Panel lateral */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
   </style>
 </head>
 <body>
@@ -215,6 +257,7 @@ closeBtn.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
