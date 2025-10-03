@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>James Rodríguez: ¿última oportunidad en São Paulo?</title>
+  <title>Perspectiva - POEMAS</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body{
@@ -104,20 +104,161 @@
     }
     .opinion a:hover{text-decoration:underline;}
     .opinion small{display:block;color:#666;font-size:12px;}
+
+    /* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* columnas pasan a estar una debajo de otra */
+    padding: 0 10px;
+  }
+
+  main {
+    flex: 1; /* ocupa todo el ancho */
+    margin-bottom: 20px;
+  }
+
+  aside {
+    flex: 1; /* ocupa todo el ancho */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start; /* logo y menú uno debajo del otro */
+    padding: 15px 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 0 10px 10px 0; /* enlaces más cómodos para móvil */
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 20px; /* títulos más pequeños en celular */
+  }
+
+  img {
+    border-radius: 8px;
+  }
+}
+
+    /* Panel lateral */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;   /* ahora a la izquierda */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+/* Botón hamburguesa */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;   /* oculto por defecto */
+  position: absolute; /* para pegarlo al borde */
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* encima de todo */
+}
+
+/* Panel lateral en móvil */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;   /* oculto completamente fuera de pantalla */
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0; /* aparece */
+}
+
+/* Solo mostrar botón en móvil */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+
+
   </style>
 </head>
 <body>
 
   <!-- Barra superior -->
-  <header>
-    <h1>⚽ Perspectiva</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="#">Noticias</a>
-      <a href="#">Opinión</a>
-      <a href="#">Contacto</a>
-    </nav>
-  </header>
+<header>
+  <h1>⚽ Perspectiva</h1>
+  <span class="menu-toggle">☰</span>
+  <nav class="menu">
+    <span class="close-btn">✖</span>
+    <a href="index.html">Inicio</a>
+    <a href="index.html">Noticias</a>
+    <a href="index.html#sobre-mi">Sobre mí</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+</header>
+
 
   <!-- Contenido y barra lateral -->
   <div class="container">
@@ -129,7 +270,7 @@
       <img src="https://cdn.pixabay.com/photo/2019/06/07/02/12/book-4257405_640.jpg" alt="IMAGEN DE LA NOTICIA">
 
       <p>SER DELGADO NO ESTA MAL</p>
-      <p>Soy delgado, lo sé, casi un suspiro,
+       <p>Soy delgado, lo sé, casi un suspiro,
 un hilo en la brisa, ligero en el giro.
 A veces me miro y pienso distinto,
 pero en mi reflejo hay fuerza que pinto.</p>
@@ -137,11 +278,15 @@ pero en mi reflejo hay fuerza que pinto.</p>
 mi cuerpo no mide mi resistencia.
 Soy raíz firme aunque parezca leve,
 mi espíritu es hierro, aunque el cuerpo se mueve.</p>
-      <p>Ser delgado no es falta, es vuelo, es camino,
+       <p>Ser delgado no es falta, es vuelo, es camino,
 soy ágil, soy rápido, ligero destino.
 Y aunque la forma parezca pequeña,
 mi valor es grande, y mi vida se sueña.</p>
-      <p>MI VIDA COMO UN BALON</p>
+
+
+
+      <p>MI COMO UN BALON</p>
+      
       <p>Soy como un balón de fútbol, redondo y viajero,
 he rodado en canchas de polvo y de acero.
 A veces me patean fuerte sin aviso,
@@ -150,15 +295,20 @@ otras me elevan alto, casi al paraíso.</p>
 pero sigo rodando, nunca derrotado.
 Cada raspón en mi piel es lección,
 cada pase perdido, otra motivación.</p>
-      <p>Me lanzan, me empujan, me cambian de lugar,
+       <p>Me lanzan, me empujan, me cambian de lugar,
 pero siempre busco volver a jugar.
 Y aunque termine en la red o afuera del campo,
 mi esencia es seguir, sin miedo, con encanto.</p>
-      <p>Soy balón y soy vida: sigo en movimiento,
+       <p>Soy balón y soy vida: sigo en movimiento,
+cada giro es fuerza, cada bote, intento.
+Y así como el fútbol nunca se detiene,
+mi sueño avanza, mi historia se mantiene.</p>
+       <p>Soy balón y soy vida: sigo en movimiento,
 cada giro es fuerza, cada bote, intento.
 Y así como el fútbol nunca se detiene,
 mi sueño avanza, mi historia se mantiene.</p>
       
+
     </main>
 
     <!-- Barra lateral -->
@@ -172,7 +322,33 @@ mi sueño avanza, mi historia se mantiene.</p>
     </aside>
   </div>
 
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const closeBtn = document.querySelector('.close-btn');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  menu.classList.remove('active');
+});
+</script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
