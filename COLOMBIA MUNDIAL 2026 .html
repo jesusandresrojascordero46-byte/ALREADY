@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body{
+      font-family:'Poppins', system-ui, sans-serif;
+      background: radial-gradient(circle at 20% 30%, rgba(247,198,0,0.5) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(0,151,57,0.4) 0%, transparent 50%),
+                  radial-gradient(circle at 30% 70%, rgba(60,190,241,0.4) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(233,78,60,0.3) 0%, transparent 50%),
+                  #f5f5f5;
+      background-attachment: fixed;
+      color:#111;
+      margin:0;
+      padding:0;
+      line-height:1.6;
+    }
+
+    /* === BARRA SUPERIOR === */
+    header{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+      background:#fff;
+      color:#002776;
+      border-radius:0 0 16px 16px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      box-sizing:border-box;
+    }
+    header h1{
+      font-size:24px;
+      color:#002776;
+      margin:0;
+    }
+    nav a{
+      color:#002776;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:600;
+    }
+    nav a:hover{text-decoration:underline;}
+
+    /* === LAYOUT PRINCIPAL === */
+    .container{
+      display:flex;
+      max-width:1200px;
+      margin:40px auto;
+      gap:20px;
+      padding:0 20px;
+    }
+
+    /* === CONTENIDO PRINCIPAL === */
+    main{
+      flex:3;
+      background:#fff;
+      padding:30px;
+      border-radius:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1{color:#009739;margin-bottom:10px;}
+    .meta{color:#666;margin-bottom:20px;font-size:14px;}
+    .tag{
+      background:#002776;
+      color:#fff;
+      padding:2px 8px;
+      border-radius:999px;
+      font-size:12px;
+      margin-left:8px;
+    }
+    img{width:100%;border-radius:12px;margin:20px 0;}
+    a{color:#009739;text-decoration:none;font-weight:600;}
+    a:hover{text-decoration:underline;}
+
+    /* === SIDEBAR === */
+    aside{
+      flex:1;
+      background:#fff;
+      padding:20px;
+      border-radius:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    aside h2{
+      font-size:18px;
+      color:#002776;
+      margin-bottom:15px;
+    }
+    .opinion{
+      margin-bottom:15px;
+      padding-bottom:10px;
+      border-bottom:1px solid #eee;
+    }
+    .opinion:last-child{border:none;}
+    .opinion a{
+      color:#009739;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .opinion a:hover{text-decoration:underline;}
+    .opinion small{display:block;color:#666;font-size:12px;}
+
+    /* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* columnas pasan a estar una debajo de otra */
+    padding: 0 10px;
+  }
+
+  main {
+    flex: 1; /* ocupa todo el ancho */
+    margin-bottom: 20px;
+  }
+
+  aside {
+    flex: 1; /* ocupa todo el ancho */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start; /* logo y menú uno debajo del otro */
+    padding: 15px 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 0 10px 10px 0; /* enlaces más cómodos para móvil */
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 20px; /* títulos más pequeños en celular */
+  }
+
+  img {
+    border-radius: 8px;
+  }
+}
+
+    /* Panel lateral */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;   /* ahora a la izquierda */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+/* Botón hamburguesa */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;   /* oculto por defecto */
+  position: absolute; /* para pegarlo al borde */
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* encima de todo */
+}
+
+/* Panel lateral en móvil */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;   /* oculto completamente fuera de pantalla */
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0; /* aparece */
+}
+
+/* Solo mostrar botón en móvil */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+<header>
+  <h1>⚽ Perspectiva</h1>
+  <span class="menu-toggle">☰</span>
+  <nav class="menu">
+    <span class="close-btn">✖</span>
+    <a href="index.html">Inicio</a>
+    <a href="index.html">Noticias</a>
+    <a href="index.html#sobre-mi">Sobre mí</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+</header>
+
+
+  <!-- Contenido y barra lateral -->
+  <div class="container">
+    <!-- Artículo -->
+    <main>
+      <h1>⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</h1>
+      <div class="meta">20 de agosto de 2025 <span class="tag">Copa Sudamericana</span></div>
+
+      <img src="https://cdn.pixabay.com/photo/2015/01/09/11/29/bleachers-594201_1280.jpg" alt="IMAGEN DE LA NOTICIA">
+
+      <p>Tras el final de las eliminatorias rumbo al Mundial, todos nos preguntamos: ¿qué se espera de esta selección Colombia en el Mundial 2026? La respuesta no es sencilla. Después de alcanzar la final de la Copa América, el país tiene motivos para ilusionarse, pero también enfrenta la presión de demostrar que puede competir de tú a tú con selecciones de mayor calibre. Las expectativas son claras: no llegar al menos a cuartos de final, en un torneo que contará con 16avos de final, sería un resultado que el país difícilmente podría aceptar. </p>
+
+      <p>El equipo gira alrededor de James Rodríguez, cuya posible despedida mundialista añade dramatismo y peso emocional. James no solo organiza el juego; inspira, conecta, y decide. A su lado, Luis Díaz, Richard Ríos, Daniel Muñoz y Jhon Duran, que pueden aportan velocidad, fuerza, pase y gol. La combinación de talento joven y experiencia internacional crea un equipo capaz de enfrentar a selecciones de primer nivel, siempre que la cohesión colectiva se mantenga intacta. </p>
+
+      <p>Bajo la dirección de Néstor Lorenzo, Colombia plantea estrategias claras: presión alta para recuperar rápido, transiciones veloces aprovechando la rapidez de Díaz y Muñoz, y un mediocampo creativo donde James distribuye cada balón. La flexibilidad táctica —alternando entre 4-3-3 ofensivo y 4-2-3-1 más defensivo— permite adaptarse al rival sin perder identidad. Lorenzo sabe que el equilibrio entre disciplina y creatividad será la clave para que la Tricolor cumpla las expectativas. </p>
+      
+      <p>Frente a mundiales anteriores, Colombia llega con más madurez, mejor balance y un grupo consciente de su potencial. Pero la presión será enorme. La afición exige grandes actuaciones y la prensa no perdona errores. Sin embargo, esta tensión también puede ser combustible. Con James marcando el ritmo, un plantel ofensivo potente y estrategias bien definidas por Lorenzo, Colombia tiene la oportunidad de trascender. </p>
+
+      <p>El Mundial 2026 será mucho más que un torneo: será el test final de una generación y la posible despedida de su estrella. Llegar a cuartos de final y aspirar más no es solo un objetivo: es un mandato histórico. La Tricolor tiene el talento, la táctica y el corazón; ahora le toca demostrar que está a la altura de los sueños de todo un país. </p>
+      
+      <p><a href="index.html">⬅ Volver a Perspectiva</a></p>
+
+    </main>
+
+    <!-- Barra lateral -->
+    <aside>
+      <h2>📝 Opiniones destacadas</h2>
+      <div class="opinion">
+        <a href="INDEPENDIENTE VS U DE CHILE.html">🚨 Incidentes en el partido Independiente vs Universidad de Chile</a>
+        <small>20 ago 2025</small>
+      </div>
+      
+            <div class="opinion">
+        <a href="COLOMBIA MUNDIAL 2026 .html">⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</a>
+        <small>20 ago 2025</small>
+      </div>
+
+    </aside>
+  </div>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const closeBtn = document.querySelector('.close-btn');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  menu.classList.remove('active');
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
