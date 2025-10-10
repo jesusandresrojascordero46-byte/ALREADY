@@ -68,7 +68,7 @@ nav a:hover{ background:var(--accent); color:#fff; }
 .cat-btn:hover{ background:var(--accent); color:#fff; }
 
 /* MAIN */
-main{ max-width:1200px; margin:24px auto; padding:0 48px; display:grid; grid-template-columns:3fr 1fr; gap:24px; }
+main{ max-width:1200px; margin:24px auto; padding:0 16px; display:grid; grid-template-columns:3fr 1fr; gap:24px; }
 @media(max-width:900px){ main{ grid-template-columns:1fr; } }
 
 /* GRID DE ARTÍCULOS */
@@ -179,6 +179,7 @@ aside li{ margin-bottom:10px; }
 
 /* FOOTER */
 footer{ margin:40px 0 20px; text-align:center; color:var(--muted); }
+
 
 
 
