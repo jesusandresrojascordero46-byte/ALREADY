@@ -79,7 +79,7 @@ article:hover{ transform:translateY(-4px); }
 .cover{ width:100%; height:180px; object-fit:cover; }
 .content h2{ font-size:18px; margin-bottom:6px; color:var(--accent); line-height:1.3; }
 .meta{ font-size:14px; color:var(--muted); margin-bottom:10px; }
-.tag{ background:var(--tag); color:#fff; padding:2px 8px; border-radius:999px; font-size:12px; margin-left:8px; }
+.tag{ background:var(--tag); color:#fff; padding:4px 16px; border-radius:999px; font-size:12px; margin-left:8px; }
 .readmore{ display:inline-block; margin-top:8px; color:var(--accent); }
 
 
@@ -179,6 +179,7 @@ aside li{ margin-bottom:10px; }
 
 /* FOOTER */
 footer{ margin:40px 0 20px; text-align:center; color:var(--muted); }
+
 
 
 
