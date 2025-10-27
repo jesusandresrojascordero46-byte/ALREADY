@@ -186,19 +186,12 @@ aside li{ margin-bottom:10px; }
   font-style: italic;
 }
 
-.credit {
-  text-align: center;
-  font-size: 12px;
-  color: #666;
-  margin-top: -10px;
-  margin-bottom: 20px;
-  font-style: italic;
-}
 
 
 
 /* FOOTER */
 footer{ margin:40px 0 20px; text-align:center; color:var(--muted); }
+
 
 
 
