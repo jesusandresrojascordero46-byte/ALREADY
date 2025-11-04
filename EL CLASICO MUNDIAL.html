@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🇪🇸⚔️ Madrid y Barça: más que un partido, una batalla de ideales ⚽🔥</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body{
+      font-family:'Poppins', system-ui, sans-serif;
+      background: radial-gradient(circle at 20% 30%, rgba(247,198,0,0.5) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(0,151,57,0.4) 0%, transparent 50%),
+                  radial-gradient(circle at 30% 70%, rgba(60,190,241,0.4) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(233,78,60,0.3) 0%, transparent 50%),
+                  #f5f5f5;
+      background-attachment: fixed;
+      color:#111;
+      margin:0;
+      padding:0;
+      line-height:1.6;
+    }
+
+    /* === BARRA SUPERIOR === */
+    header{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+      background:#fff;
+      color:#002776;
+      border-radius:0 0 16px 16px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      box-sizing:border-box;
+    }
+    header h1{
+      font-size:24px;
+      color:#002776;
+      margin:0;
+    }
+    nav a{
+      color:#002776;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:600;
+    }
+    nav a:hover{text-decoration:underline;}
+
+    /* === LAYOUT PRINCIPAL === */
+    .container{
+      display:flex;
+      max-width:1200px;
+      margin:40px auto;
+      gap:20px;
+      padding:0 20px;
+    }
+
+    /* === CONTENIDO PRINCIPAL === */
+    main{
+      flex:3;
+      background:#fff;
+      padding:30px;
+      border-radius:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1{color:#009739;margin-bottom:10px;}
+    .meta{color:#666;margin-bottom:20px;font-size:14px;}
+    .tag{
+      background:#002776;
+      color:#fff;
+      padding:2px 8px;
+      border-radius:999px;
+      font-size:12px;
+      margin-left:8px;
+    }
+    img{width:100%;border-radius:12px;margin:20px 0;}
+    a{color:#009739;text-decoration:none;font-weight:600;}
+    a:hover{text-decoration:underline;}
+
+    /* === SIDEBAR === */
+    aside{
+      flex:1;
+      background:#fff;
+      padding:20px;
+      border-radius:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    aside h2{
+      font-size:18px;
+      color:#002776;
+      margin-bottom:15px;
+    }
+    .opinion{
+      margin-bottom:15px;
+      padding-bottom:10px;
+      border-bottom:1px solid #eee;
+    }
+    .opinion:last-child{border:none;}
+    .opinion a{
+      color:#009739;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .opinion a:hover{text-decoration:underline;}
+    .opinion small{display:block;color:#666;font-size:12px;}
+
+    /* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* columnas pasan a estar una debajo de otra */
+    padding: 0 10px;
+  }
+
+  main {
+    flex: 1; /* ocupa todo el ancho */
+    margin-bottom: 20px;
+  }
+
+  aside {
+    flex: 1; /* ocupa todo el ancho */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start; /* logo y menú uno debajo del otro */
+    padding: 15px 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 0 10px 10px 0; /* enlaces más cómodos para móvil */
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 20px; /* títulos más pequeños en celular */
+  }
+
+  img {
+    border-radius: 8px;
+  }
+}
+
+    /* Panel lateral */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;   /* ahora a la izquierda */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+/* Botón hamburguesa */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;   /* oculto por defecto */
+  position: absolute; /* para pegarlo al borde */
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* encima de todo */
+}
+
+/* Panel lateral en móvil */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;   /* oculto completamente fuera de pantalla */
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0; /* aparece */
+}
+
+/* Solo mostrar botón en móvil */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+
+    .credit {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+<header>
+  <h1>⚽ Perspectiva</h1>
+  <span class="menu-toggle">☰</span>
+  <nav class="menu">
+    <span class="close-btn">✖</span>
+    <a href="index.html">Inicio</a>
+    <a href="index.html">Noticias</a>
+    <a href="index.html#sobre-mi">Sobre mí</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+</header>
+
+
+  <!-- Contenido y barra lateral -->
+  <div class="container">
+    <!-- Artículo -->
+    <main>
+      <h1>🇪🇸⚔️ Madrid y Barça: más que un partido, una batalla de ideales ⚽🔥</h1>
+      <div class="meta">26 de Octubre de 2025 <span class="tag">Clasico Español</span></div>
+
+      <img src="imagenes/JBHAM.jpeg" alt="IMAGEN DE LA NOTICIA">
+      <p class="credit">📸 Foto: Federación Colombiana de Fútbol</p>
+
+<p>Los Clásicos son conocidos como la disputa mayor de la élite del fútbol, especialmente entre estos dos equipos que son de los más grandes de la historia. Unos por sus títulos, otros por la historia que cargan y por la fanaticada que los acompaña, no solo en España, sino en miles de países del mundo. Más que ver un partido, los hinchas presencian una lucha entre dos ideales del fútbol. </p>
+<p>Días antes del encuentro surgió una polémica por la actuación de Lamine Yamal en la Kings League, programa del creador de contenido Ibai Llanos y el exjugador del Barça Gerard Piqué. En él, Yamal hizo un comentario que, aunque buscaba ser un chiste dentro del tono del programa, fue tomado a mal por jugadores y aficionados del Real Madrid, generando una fuerte ola de críticas hacia el joven jugador en redes sociales. </p>
+      <img src="imagenes/IBAI Y LAMINE.avif" alt="IMAGEN DE LA NOTICIA">
+      <p class="credit">📸 Fuente: FIFA</p>
+<p>Este tipo de frases no se pueden decir en un programa tan reconocido mundialmente. Más allá de una broma, terminan siendo una falta de respeto hacia un club, sus jugadores, su cuerpo técnico y toda una institución. No sirve la excusa de “es solo un niño”, porque Yamal entiende que es una figura pública y debe cuidar sus palabras frente a las cámaras. Ser figura pública implica responsabilidad. </p>
+<p>Llegamos al domingo 26 de octubre, día del Clásico. Normalmente, estos partidos son intensos y llenos de tensión, pero este tuvo varias polémicas que no me gustaron. El Madrid, dirigido por Xabi Alonso, salió con un 4-4-2, mientras que el Barça de Hansi Flick usó un 4-3-3. Para mí, la decisión táctica de Alonso fue acertada. </p>
+<p>En cuanto al rendimiento, Kylian Mbappé estuvo impresionante. Como delantero centro mantiene una racha goleadora brutal y una capacidad increíble para generar peligro. Aun con algunos fueras de juego, su nivel ofensivo fue sobresaliente. Jude Bellingham también demostró su peso en el equipo, con una asistencia y un gol, aunque personalmente no me gustó su actitud durante el encuentro. </p>
+      <img src="imagenes/KMBBPPE2.jpeg" alt="IMAGEN DE LA NOTICIA">
+      <p class="credit">📸 Fuente: FIFA</p>
+<p>Vinícius jugó más como extremo creativo, asistiendo a Militao para el gol de Bellingham. Sin embargo, me habría gustado verlo más ofensivo, buscando diagonales y remates, no tanto centrando desde la línea. Tchouaméni y Militao, para mí, fueron determinantes para Madrid: el primero dominó el mediocampo con muchas recuperaciones, y el segundo fue un muro en defensa, obligando al Barça a atacar por las bandas ante la imposibilidad de avanzar por el centro.</p>
+<p>El Barça llegaba con varias bajas, además de la ausencia de su técnico por expulsión en liga. La primera parte fue floja ofensivamente: no lograban pisar área rival, y las contras se ejecutaban mal. Flick no utilizó la defensa adelantada que le había funcionado en clásicos anteriores, y cuando intentó hacerlo, llegó el primer gol del Madrid: pase de Jude al espacio y Mbappé aprovechó la velocidad ante un Pau Cubarsí que se confió en el fuera de juego. Para el segundo gol, nuevamente, fue error de marcaje: Bellingham entró solo al área chica y definió sin marca. </p>
+      <img src="imagenes/BARCA.jpeg" alt="IMAGEN DE LA NOTICIA">
+      <p class="credit">📸 Fuente: FIFA</p>
+<p>El mediocampo del Barça me gustó bastante. Frenkie de Jong distribuyó muy bien el balón y mantuvo equilibrio entre defensa y ataque. Fermín López, aunque tuvo un buen primer tiempo, desaprovechó una gran oportunidad de empate en la segunda parte al decidir mal la jugada.Pedri, aunque no tuvo su mejor día, fue inteligente. En una jugada de contragolpe del Madrid, hizo una falta táctica a Vinícius para frenar una ocasión clara. Fue amonestado, pero evitó el gol. Sin embargo, más tarde esa decisión le costó la expulsión por doble amarilla tras una falta sobre Tchouaméni. </p>
+      <img src="imagenes/PPV.jpeg" alt="IMAGEN DE LA NOTICIA">
+      <p class="credit">📸 Fuente: FIFA</p>
+<p>En ataque, el equipo se vio débil. Ferran Torres fue anulado por Militao, Marcus Rashford no terminó de conectarse con sus compañeros, y Lamine Yamal, el más esperado, desapareció. Justamente él, que días antes había hablado tanto, no pudo brillar en un partido clave para definir la liga. Cualquiera puede tener un mal partido, pero si hablas de más, la presión puede pasarte factura. </p>
+<p>Defensivamente, Eric García estuvo sólido, recordando a Íñigo Martínez. Cubarsí mejoró muchísimo en la segunda parte, y Balde fue veloz, aunque no se entendió bien con Rashford. Koundé cumplió, pero su conexión con Yamal no fue la mejor, a pesar de su buena química habitual. </p>
+<p>La segunda parte del Barça me gustó mucho más: mejoró en defensa y ataque, tuvo varias oportunidades claras de empate y obligó al Madrid a replegarse y bajar la intensidad.</p>
+<p>El final del partido se descontroló. Hubo discusiones, egos y actitudes inmaduras. Jude Bellingham, pese a su gran actuación, habló sobre el “caso Negreira” y encendió más el ambiente. Vinícius, por su parte, mostró una actitud infantil tras su cambio, yéndose a los camerinos y regresando solo para discutir con Yamal. Para mí, el Madrid habría quedado más respetado si se mantenía en silencio y dejaba que la prensa hablara por ellos. </p>
+      <img src="imagenes/PELEA.jpeg" alt="IMAGEN DE LA NOTICIA">
+      <p class="credit">📸 Fuente: FIFA</p>
+<p>También está el caso de Dani Carvajal, capitán de la selección española, quien discutió con Yamal diciéndole: “A ver si sigues hablando.” Ese momento desató el caos final, y se rumorea que podría afectar sus futuras convocatorias, lo cual me parece totalmente innecesario. </p>
+<p>Ambos equipos mostraron un buen nivel, pero    el Madrid supo manejar mejor el encuentro y eso se reflejó en el marcador. Fue un buen Clásico, con polémicas innecesarias pero con gran calidad futbolística. 
+ Ahora el Barça queda segundo, a cinco puntos del Madrid. Solo queda esperar cómo se desarrolla la liga para estos dos gigantes del fútbol mundial. </p>
+
+      
+
+      
+
+      <p></p>
+      
+      <p><a href="index.html">⬅ Volver a Perspectiva</a></p>
+
+    </main>
+
+    <!-- Barra lateral -->
+    <aside>
+      <h2>📝 Opiniones destacadas</h2>
+      <div class="opinion">
+        <a href="INDEPENDIENTE VS U DE CHILE.html">🚨 Incidentes en el partido Independiente vs Universidad de Chile</a>
+        <small>20 ago 2025</small>
+      </div>
+      
+            <div class="opinion">
+        <a href="COLOMBIA MUNDIAL 2026 .html">⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</a>
+        <small>20 ago 2025</small>
+      </div>
+
+    </aside>
+  </div>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const closeBtn = document.querySelector('.close-btn');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  menu.classList.remove('active');
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
