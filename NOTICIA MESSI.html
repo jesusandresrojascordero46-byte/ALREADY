@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colombia merece mirar hacia adentro: el valor de nuestros héroes antes que el adiós de Messi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body{
+      font-family:'Poppins', system-ui, sans-serif;
+      background: radial-gradient(circle at 20% 30%, rgba(247,198,0,0.5) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(0,151,57,0.4) 0%, transparent 50%),
+                  radial-gradient(circle at 30% 70%, rgba(60,190,241,0.4) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(233,78,60,0.3) 0%, transparent 50%),
+                  #f5f5f5;
+      background-attachment: fixed;
+      color:#111;
+      margin:0;
+      padding:0;
+      line-height:1.6;
+    }
+
+    /* === BARRA SUPERIOR === */
+    header{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+      background:#fff;
+      color:#002776;
+      border-radius:0 0 16px 16px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      box-sizing:border-box;
+    }
+    header h1{
+      font-size:24px;
+      color:#002776;
+      margin:0;
+    }
+    nav a{
+      color:#002776;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:600;
+    }
+    nav a:hover{text-decoration:underline;}
+
+    /* === LAYOUT PRINCIPAL === */
+    .container{
+      display:flex;
+      max-width:1200px;
+      margin:40px auto;
+      gap:20px;
+      padding:0 20px;
+    }
+
+    /* === CONTENIDO PRINCIPAL === */
+    main{
+      flex:3;
+      background:#fff;
+      padding:30px;
+      border-radius:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1{color:#009739;margin-bottom:10px;}
+    .meta{color:#666;margin-bottom:20px;font-size:14px;}
+    .tag{
+      background:#002776;
+      color:#fff;
+      padding:2px 8px;
+      border-radius:999px;
+      font-size:12px;
+      margin-left:8px;
+    }
+    img{width:100%;border-radius:12px;margin:20px 0;}
+    a{color:#009739;text-decoration:none;font-weight:600;}
+    a:hover{text-decoration:underline;}
+
+    /* === SIDEBAR === */
+    aside{
+      flex:1;
+      background:#fff;
+      padding:20px;
+      border-radius:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    aside h2{
+      font-size:18px;
+      color:#002776;
+      margin-bottom:15px;
+    }
+    .opinion{
+      margin-bottom:15px;
+      padding-bottom:10px;
+      border-bottom:1px solid #eee;
+    }
+    .opinion:last-child{border:none;}
+    .opinion a{
+      color:#009739;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .opinion a:hover{text-decoration:underline;}
+    .opinion small{display:block;color:#666;font-size:12px;}
+
+    /* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* columnas pasan a estar una debajo de otra */
+    padding: 0 10px;
+  }
+
+  main {
+    flex: 1; /* ocupa todo el ancho */
+    margin-bottom: 20px;
+  }
+
+  aside {
+    flex: 1; /* ocupa todo el ancho */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start; /* logo y menú uno debajo del otro */
+    padding: 15px 20px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 0 10px 10px 0; /* enlaces más cómodos para móvil */
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 20px; /* títulos más pequeños en celular */
+  }
+
+  img {
+    border-radius: 8px;
+  }
+}
+
+    /* Panel lateral */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;   /* ahora a la izquierda */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+/* Botón hamburguesa */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;   /* oculto por defecto */
+  position: absolute; /* para pegarlo al borde */
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* encima de todo */
+}
+
+/* Panel lateral en móvil */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;   /* oculto completamente fuera de pantalla */
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0; /* aparece */
+}
+
+/* Solo mostrar botón en móvil */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+
+    .credit {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.audio-box {
+  margin: 20px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.tiktok-embed {
+  margin: 30px auto;
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+<header>
+  <h1>⚽ Perspectiva</h1>
+  <span class="menu-toggle">☰</span>
+  <nav class="menu">
+    <span class="close-btn">✖</span>
+    <a href="index.html">Inicio</a>
+    <a href="index.html">Noticias</a>
+    <a href="index.html#sobre-mi">Sobre mí</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+</header>
+
+
+  <!-- Contenido y barra lateral -->
+  <div class="container">
+    <!-- Artículo -->
+    <main>
+      <h1>Colombia merece mirar hacia adentro: el valor de nuestros héroes antes que el adiós de Messi</h1>
+      <div class="meta">4 de septiembre de 2025 <span class="tag">Eliminatorias Mundial</span></div>
+
+      <img src="imagenes/CVSA.jpeg" alt="IMAGEN DE LA NOTICIA">
+      <p class="credit">📸 Foto: MESSI Y JAMES RODRIGUEZ</p>
+
+<p>En los últimos días, el fútbol mundial se ha detenido ante una noticia que muchos veían venir: el posible retiro de Lionel Messi después de las eliminatorias sudamericanas. Las redes, los medios y hasta los aficionados más casuales han llenado el ambiente con nostalgia y gratitud hacia el astro argentino. Pero mientras todo el continente parece mirar hacia el sur, aquí en Colombia hay algo que no deberíamos dejar pasar desapercibido: la grandeza de nuestros propios jugadores, de aquellos que han dejado alma, vida y corazón por la camiseta amarilla.</p>
+<p>Porque sí, Messi es una leyenda mundial. Nadie lo discute. Pero no podemos seguir viviendo bajo la sombra de lo extranjero cuando también tenemos historia, talento y orgullo en casa. Nuestros jugadores también han escrito páginas doradas. Han llorado con nosotros, nos han hecho vibrar y han llevado nuestra bandera a lo más alto, muchas veces contra todo pronóstico y en medio de la crítica.</p>
+<p>Uno de esos símbolos, quizás el más representativo de los últimos tiempos, es James Rodríguez. Ese niño que soñaba con ser grande, que desde Envigado conquistó el mundo, que nos hizo saltar de emoción en el Mundial de Brasil 2014, que puso el nombre de Colombia en los labios de millones de personas. James no solo fue fútbol: fue emoción, fue identidad, fue un reflejo de lo que somos los colombianos cuando creemos en nosotros mismos.</p>
+<p>Y por eso, lo que ocurrió en el estadio Metropolitano de Barranquilla hace poco no puede pasar inadvertido. James, sentado en el banco, mirando al público con una mezcla de nostalgia y serenidad, pareció estar despidiéndose del escenario que tantas veces lo vio brillar. No fue una despedida oficial, pero sí una de esas imágenes que pesan más que mil palabras. Era el rostro de un ídolo aceptando el paso del tiempo, de un líder entendiendo que quizás su ciclo se acerca al final.</p>
+
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@rojitass53/video/7570215541718174983" data-video-id="7570215541718174983" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@rojitass53" href="https://www.tiktok.com/@rojitass53?refer=embed">@rojitass53</a> 🇨🇴🔥Disfrutemos de lo último de esta era de la selección colombiana <a title="futbol⚽️" target="_blank" href="https://www.tiktok.com/tag/futbol%E2%9A%BD%EF%B8%8F?refer=embed">#futbol⚽️</a> <a title="noticias" target="_blank" href="https://www.tiktok.com/tag/noticias?refer=embed">#noticias</a> <a title="opinion" target="_blank" href="https://www.tiktok.com/tag/opinion?refer=embed">#opinion</a>  <a title="futbolcolombiano🇨🇴" target="_blank" href="https://www.tiktok.com/tag/futbolcolombiano%F0%9F%87%A8%F0%9F%87%B4?refer=embed">#futbolcolombiano🇨🇴</a> <a target="_blank" title="♬ sonido original - rojitass" href="https://www.tiktok.com/music/sonido-original-7570215578024086273?refer=embed">♬ sonido original - rojitass</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+
+<p>Mientras el mundo habla del adiós de Messi, nosotros deberíamos hablar del legado de James, de Cuadrado, de Ospina, de Falcao. Hombres que, con errores y aciertos, pusieron el nombre de Colombia en el mapa del fútbol mundial. Jugadores que no nacieron en potencias europeas, que no tuvieron todo servido, que se hicieron a pulso, con hambre, con lucha.</p>
+<p>Es momento de darle a nuestros jugadores el reconocimiento que merecen. De entender que el amor por la camiseta no solo se demuestra cuando ganamos, sino cuando reconocemos a quienes han construido el camino. Mientras todos miran hacia Argentina para despedir al 10 más grande del mundo, nosotros deberíamos mirar hacia adentro y valorar a nuestros 10, a nuestros capitanes, a quienes encendieron la ilusión de un país entero.</p>
+<p>Quizás James ya no corra como antes, quizás Falcao ya no marque cada domingo, pero su huella está ahí, tatuada en nuestra historia. Y eso no se borra. Porque el verdadero legado no es levantar trofeos, sino levantar emociones. Y en eso, los nuestros también han sido gigantes.</p>
+<p>El día que aprendamos a darle más importancia a nuestros héroes que a los ajenos, Colombia no solo será una potencia en talento, sino también en orgullo. El fútbol no se trata solo de ver hacia afuera, sino de recordar quiénes somos y quiénes nos hicieron creer.</p>
+<p>Así que mientras el mundo llora el posible adiós de Messi, yo prefiero aplaudir de pie a James Rodríguez, sentado en el Metropolitano, mirando al cielo barranquillero con la misma pasión con la que un país entero lo vio brillar.</p>
+<p>Porque a veces los verdaderos adioses no se gritan… se sienten.</p>
+
+      <p></p>
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2200152747&color=%2300cc11&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/jesus-andres-rojas-cordero" title="Jesús Andrés Rojas Cordero" target="_blank" style="color: #cccccc; text-decoration: none;">Jesús Andrés Rojas Cordero</a> · <a href="https://soundcloud.com/jesus-andres-rojas-cordero/el-retiro-de-los-grandes" title="EL RETIRO DE LOS GRANDES" target="_blank" style="color: #cccccc; text-decoration: none;">EL RETIRO DE LOS GRANDES</a></div>
+      
+      <p><a href="index.html">⬅ Volver a Perspectiva</a></p>
+
+    </main>
+
+    <!-- Barra lateral -->
+    <aside>
+      <h2>📝 Opiniones destacadas</h2>
+      <div class="opinion">
+        <a href="INDEPENDIENTE VS U DE CHILE.html">🚨 Incidentes en el partido Independiente vs Universidad de Chile</a>
+        <small>20 ago 2025</small>
+      </div>
+      
+            <div class="opinion">
+        <a href="COLOMBIA MUNDIAL 2026 .html">⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</a>
+        <small>20 ago 2025</small>
+      </div>
+
+    </aside>
+  </div>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const closeBtn = document.querySelector('.close-btn');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  menu.classList.remove('active');
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
