@@ -54,7 +54,7 @@ nav a:hover{ background:var(--accent); color:#fff; }
 .hero-btn:hover{ background:var(--accent-hover); }
 
 /* DESTACADA */
-.destacada{ margin:40px auto; max-width:1000px; }
+.destacada{ margin:40px auto; max-width:1170px; }
 .destacada h2{ margin-bottom:20px;color:var(--accent); }
 .destacada article{ display:grid; grid-template-columns:1fr 1fr; gap:20px; background:rgba(255,255,255,0.9); border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,.15); }
 .destacada img{ width:100%; height:100%; object-fit:cover; }
@@ -72,7 +72,7 @@ main{ max-width:1200px; margin:24px auto; padding:0 16px; display:grid; grid-tem
 @media(max-width:900px){ main{ grid-template-columns:1fr; } }
 
 /* GRID DE ARTÍCULOS */
-.grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:20px; }
+.grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; }
 @media(max-width:800px){ .grid{ grid-template-columns:1fr; } }
 article{ background:rgba(255,255,255,0.9); border-radius:12px; border:1px solid rgba(0,0,0,.1); box-shadow:0 6px 20px rgba(0,0,0,.15); overflow:hidden; transition:transform .2s ease; }
 article:hover{ transform:translateY(-4px); }
@@ -81,7 +81,7 @@ article:hover{ transform:translateY(-4px); }
 .meta{ font-size:14px; color:var(--muted); margin-bottom:10px; }
 .tag{ background:var(--tag); color:#fff; padding:2px 8px; border-radius:999px; font-size:12px; margin-left:8px; }
 .readmore{ display:inline-block; margin-top:8px; color:var(--accent); }
-.content {padding: 20px 28px; /* ↑↓ 20px arriba/abajo y →← 28px a los lados */
+.content {padding: 0px 8px; /* ↑↓ 20px arriba/abajo y →← 28px a los lados */
 }
 
 
@@ -93,16 +93,16 @@ aside ul{ list-style:none;padding:0;margin:0; }
 aside li{ margin-bottom:10px; }
 
 /* SOBRE MÍ */
-.sobre-mi{ background:rgba(255,255,255,0.9); padding:30px; border-radius:12px; margin:40px auto; max-width:1000px; box-shadow:0 6px 20px rgba(0,0,0,0.15); text-align:center; }
-.sobre-mi img{ width:120px; height:120px; object-fit:cover; border-radius:50%; margin-bottom:15px; border:3px solid var(--accent); }
+.sobre-mi{ background:rgba(255,255,255,0.9); padding:30px; border-radius:12px; margin:40px auto; max-width:1170px; box-shadow:0 6px 20px rgba(0,0,0,0.15); text-align:center; }
+.sobre-mi img{ width:220px; height:220px; object-fit:cover; border-radius:12%; margin-bottom:15px; border:2px solid var(--accent); }
 .sobre-mi h2{ color:var(--accent); }
-.sobre-mi p{ max-width:700px;margin:auto; }
+.sobre-mi p{ max-width:920px;margin:auto; }
 
 /* CONTACTO */
-.contacto{ padding:40px 20px; background:rgba(255,255,255,0.9); border-radius:12px; margin:40px auto; max-width:1000px; box-shadow:0 6px 20px rgba(0,0,0,0.15); }
+.contacto{ padding:40px 20px; background:rgba(255,255,255,0.9); border-radius:12px; margin:40px auto; max-width:1170px; box-shadow:0 6px 20px rgba(0,0,0,0.15); }
 .contacto h2{ color: var(--accent); margin-bottom:10px; text-align:center; }
 .contacto p{ text-align:center; margin-bottom:20px; }
-.contact-form{ display:flex; flex-direction:column; gap:15px; max-width:700px; margin:0 auto; }
+.contact-form{ display:flex; flex-direction:column; gap:15px; max-width:920px; margin:0 auto; }
 .contact-form label{ font-weight:600; }
 .contact-form input, .contact-form textarea{ padding:12px; border:1px solid #ccc; border-radius:8px; font-size:16px; font-family:inherit; background:#fff; }
 .contact-form button{ background:var(--accent); color:#fff; border:none; padding:14px; font-size:16px; font-weight:600; border-radius:8px; cursor:pointer; transition:all .2s ease; width:fit-content; align-self:center; }
