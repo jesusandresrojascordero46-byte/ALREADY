@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
   <style>
+
     body{
       font-family:'Poppins', system-ui, sans-serif;
       background: radial-gradient(circle at 20% 30%, rgba(247,198,0,0.5) 0%, transparent 50%),
@@ -20,130 +23,298 @@
       line-height:1.6;
     }
 
-    /* === BARRA SUPERIOR === */
-    header{
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 40px;
-      background:#fff;
-      color:#002776;
-      border-radius:0 0 16px 16px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.1);
-      box-sizing:border-box;
-    }
-    header h1{
-      font-size:24px;
-      color:#002776;
-      margin:0;
-    }
-    nav a{
-      color:#002776;
-      text-decoration:none;
-      margin-left:20px;
-      font-weight:600;
-    }
-    nav a:hover{text-decoration:underline;}
+    /* ============================= */
+/* 🎨 BASE GENERAL */
+/* ============================= */
 
-    /* === LAYOUT PRINCIPAL === */
-    .container{
-      display:flex;
-      max-width:1200px;
-      margin:40px auto;
-      gap:20px;
-      padding:0 20px;
-    }
+body{
+  font-family:'Poppins', system-ui, sans-serif;
+  background:#f4f6f8;
+  color:#111;
+  margin:0;
+  padding:0;
+  line-height:1.6;
+}
 
-    /* === CONTENIDO PRINCIPAL === */
-    main{
-      flex:3;
-      background:#fff;
-      padding:30px;
-      border-radius:16px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    }
+a{
+  color:#009739;
+  text-decoration:none;
+  font-weight:600;
+}
 
-    h1{color:#009739;margin-bottom:10px;}
-    .meta{color:#666;margin-bottom:20px;font-size:14px;}
-    .tag{
-      background:#002776;
-      color:#fff;
-      padding:2px 8px;
-      border-radius:999px;
-      font-size:12px;
-      margin-left:8px;
-    }
-    img{width:100%;border-radius:12px;margin:20px 0;}
-    a{color:#009739;text-decoration:none;font-weight:600;}
-    a:hover{text-decoration:underline;}
+a:hover{
+  text-decoration:underline;
+}
 
-    /* === SIDEBAR === */
-    aside{
-      flex:1;
-      background:#fff;
-      padding:20px;
-      border-radius:16px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    }
-    aside h2{
-      font-size:18px;
-      color:#002776;
-      margin-bottom:15px;
-    }
-    .opinion{
-      margin-bottom:15px;
-      padding-bottom:10px;
-      border-bottom:1px solid #eee;
-    }
-    .opinion:last-child{border:none;}
-    .opinion a{
-      color:#009739;
-      font-weight:600;
-      text-decoration:none;
-    }
-    .opinion a:hover{text-decoration:underline;}
-    .opinion small{display:block;color:#666;font-size:12px;}
+/* ============================= */
+/* 🔝 BARRA SUPERIOR */
+/* ============================= */
 
-    /* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* columnas pasan a estar una debajo de otra */
-    padding: 0 10px;
+header{
+  width:100%;
+  display:flex;
+  justify-content:flex-start;
+gap:40px;
+  align-items:center;
+  padding:16px 40px;
+  background:#ffffff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:3px solid #009739;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+}
+
+header h1{
+  font-size:26px;
+  font-weight:800;
+  color:#002776;
+  margin:0;
+  letter-spacing:0.4px;
+}
+
+/* ============================= */
+/* 🧭 MENÚ */
+/* ============================= */
+
+nav{
+  display:flex;
+  align-items:center;
+}
+
+nav a{
+  color:#002776;
+  margin-left:26px;
+  position:relative;
+  padding-bottom:6px;
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:#009739;
+  transition:width .3s ease;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* Botón hamburguesa */
+.menu-toggle{
+  font-size:28px;
+  cursor:pointer;
+  display:none;
+  position:absolute;
+  top:18px;
+  right:20px;
+  z-index:1100;
+}
+
+/* ============================= */
+/* 📱 MENÚ LATERAL (MÓVIL) */
+/* ============================= */
+
+.menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:260px;
+  height:100%;
+  background:#ffffff;
+  box-shadow:-4px 0 16px rgba(0,0,0,.25);
+  padding:70px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  transition:right .35s ease;
+  z-index:999;
+}
+
+.menu.active{
+  right:0;
+}
+
+.menu a{
+  color:#002776;
+  font-size:18px;
+}
+
+.close-btn{
+  position:absolute;
+  top:18px;
+  left:20px;
+  font-size:24px;
+  cursor:pointer;
+  color:#002776;
+}
+
+/* ============================= */
+/* 📐 LAYOUT */
+/* ============================= */
+
+.container{
+  display:flex;
+  max-width:1200px;
+  margin:40px auto;
+  gap:24px;
+  padding:0 20px;
+}
+
+/* ============================= */
+/* 📰 CONTENIDO PRINCIPAL */
+/* ============================= */
+
+main{
+  flex:3;
+  background:#ffffff;
+  padding:32px;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+main h1{
+  color:#009739;
+  margin-bottom:10px;
+}
+
+.meta{
+  color:#666;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.tag{
+  background:#002776;
+  color:#fff;
+  padding:3px 10px;
+  border-radius:999px;
+  font-size:12px;
+  margin-left:8px;
+}
+
+img{
+  width:100%;
+  border-radius:12px;
+  margin:22px 0;
+}
+
+.credit{
+  text-align:center;
+  font-size:12px;
+  color:#666;
+  margin-top:-10px;
+  margin-bottom:24px;
+  font-style:italic;
+}
+
+.bajada{
+  font-size:18px;
+  color:#444;
+  margin-bottom:26px;
+  font-weight:500;
+}
+
+/* ============================= */
+/* 📌 SIDEBAR */
+/* ============================= */
+
+aside{
+  flex:1;
+  background:#ffffff;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+aside h2{
+  font-size:18px;
+  color:#002776;
+  margin-bottom:16px;
+}
+
+.opinion{
+  margin-bottom:16px;
+  padding-bottom:12px;
+  border-bottom:1px solid #eee;
+}
+
+.opinion:last-child{
+  border:none;
+}
+
+.opinion a{
+  color:#009739;
+  font-weight:600;
+}
+
+.opinion small{
+  display:block;
+  color:#666;
+  font-size:12px;
+}
+
+/* ============================= */
+/* 🧩 SUBTÍTULOS */
+/* ============================= */
+
+h2{
+  color:#002776;
+  margin-top:36px;
+  margin-bottom:14px;
+  font-size:22px;
+  font-weight:700;
+}
+
+h3{
+  color:#009739;
+  margin-top:26px;
+  margin-bottom:10px;
+  font-size:18px;
+  font-weight:600;
+}
+
+/* ============================= */
+/* 📱 RESPONSIVE */
+/* ============================= */
+
+@media (max-width:900px){
+  .menu-toggle{
+    display:block;
   }
 
-  main {
-    flex: 1; /* ocupa todo el ancho */
-    margin-bottom: 20px;
-  }
-
-  aside {
-    flex: 1; /* ocupa todo el ancho */
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start; /* logo y menú uno debajo del otro */
-    padding: 15px 20px;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  nav a {
-    margin: 0 10px 10px 0; /* enlaces más cómodos para móvil */
-    display: inline-block;
-  }
-
-  h1 {
-    font-size: 20px; /* títulos más pequeños en celular */
-  }
-
-  img {
-    border-radius: 8px;
+  nav{
+    display:none;
   }
 }
+
+@media (max-width:768px){
+  .container{
+    flex-direction:column;
+    padding:0 12px;
+  }
+
+  header{
+    padding:14px 20px;
+  }
+
+  main{
+    padding:24px;
+  }
+
+  h1{
+    font-size:20px;
+  }
+
+  img{
+    border-radius:8px;
+  }
+}
+
 
     /* Panel lateral */
 .menu {
@@ -250,7 +421,71 @@
   font-style: italic;
 }
 
+/* === SUBTÍTULOS DEL ARTÍCULO === */
+h2 {
+  color: #002776;
+  margin-top: 35px;
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
 
+h3 {
+  color: #009739;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.bajada {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* ============================= */
+/* 🔗 REDES SOCIALES HEADER */
+/* ============================= */
+
+.social{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-left:20px;
+}
+
+.social a{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#f4f6f8;
+  color:#002776;
+  font-size:18px;
+  text-decoration:none;
+  transition:all .25s ease;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+.social a:hover{
+  background:#009739;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* Ocultar en móvil (opcional) */
+@media (max-width:900px){
+  .social{
+    display:none;
+  }
+}
+
+  
+  
   </style>
 </head>
 <body>
@@ -266,6 +501,14 @@
     <a href="index.html#sobre-mi">Sobre mí</a>
     <a href="index.html#contacto">Contacto</a>
   </nav>
+
+<div class="social">
+  <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+  <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+</div>
+
+
 </header>
 
 
@@ -274,20 +517,34 @@
     <!-- Artículo -->
     <main>
       <h1>⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</h1>
+      
       <div class="meta">20 de agosto de 2025 <span class="tag">Mundial 2026</span></div>
+<p class="bajada">
+Colombia llega al Mundial 2026 con ilusión, presión y una generación que está obligada a responder.
+</p>
 
       <img src="imagenes/selecao-colombia.jpg" alt="IMAGEN DE LA NOTICIA">
       <p class="credit">📸 Foto: Federación Colombiana de Fútbol</p>
 
+      <h2>La expectativa de todo un país</h2>
+
       <p>Tras el final de las eliminatorias rumbo al Mundial, todos nos preguntamos: ¿qué se espera de esta selección Colombia en el Mundial 2026? La respuesta no es sencilla. Después de alcanzar la final de la Copa América, el país tiene motivos para ilusionarse, pero también enfrenta la presión de demostrar que puede competir de tú a tú con selecciones de mayor calibre. Las expectativas son claras: no llegar al menos a cuartos de final, en un torneo que contará con 16avos de final, sería un resultado que el país difícilmente podría aceptar. </p>
+
+      <h2>James Rodríguez, el eje del proyecto</h2>
 
       <p>El equipo gira alrededor de James Rodríguez, cuya posible despedida mundialista añade dramatismo y peso emocional. James no solo organiza el juego; inspira, conecta, y decide. A su lado, Luis Díaz, Richard Ríos, Daniel Muñoz y Jhon Duran, que pueden aportan velocidad, fuerza, pase y gol. La combinación de talento joven y experiencia internacional crea un equipo capaz de enfrentar a selecciones de primer nivel, siempre que la cohesión colectiva se mantenga intacta. </p>
       
+      <h2>La idea táctica de Néstor Lorenzo</h2>
+
+      <h3>Presión alta y transiciones rápidas</h3>
+
       <p>Bajo la dirección de Néstor Lorenzo, Colombia plantea estrategias claras: presión alta para recuperar rápido, transiciones veloces aprovechando la rapidez de Díaz y Muñoz, y un mediocampo creativo donde James distribuye cada balón. La flexibilidad táctica —alternando entre 4-3-3 ofensivo y 4-2-3-1 más defensivo— permite adaptarse al rival sin perder identidad. Lorenzo sabe que el equilibrio entre disciplina y creatividad será la clave para que la Tricolor cumpla las expectativas. </p>
       
       <img src="imagenes/clasificados Mundial 2026.png" alt="IMAGEN DE LA NOTICIA">
       <p class="credit">📸 Fuente: FIFA</p>
       
+      <h2>Presión, madurez y una oportunidad histórica</h2>
+
       <p>Frente a mundiales anteriores, Colombia llega con más madurez, mejor balance y un grupo consciente de su potencial. Pero la presión será enorme. La afición exige grandes actuaciones y la prensa no perdona errores. Sin embargo, esta tensión también puede ser combustible. Con James marcando el ritmo, un plantel ofensivo potente y estrategias bien definidas por Lorenzo, Colombia tiene la oportunidad de trascender. </p>
 
       <p>El Mundial 2026 será mucho más que un torneo: será el test final de una generación y la posible despedida de su estrella. Llegar a cuartos de final y aspirar más no es solo un objetivo: es un mandato histórico. La Tricolor tiene el talento, la táctica y el corazón; ahora le toca demostrar que está a la altura de los sueños de todo un país. </p>
