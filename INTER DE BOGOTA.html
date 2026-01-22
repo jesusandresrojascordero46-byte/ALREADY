@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥⚽ Inter de Bogotá: ¿proyecto deportivo sólido o reinvención de marca en el fútbol colombiano?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+
+*{
+  box-sizing:border-box;
+}
+
+
+    body{
+      font-family:'Poppins', system-ui, sans-serif;
+      background: radial-gradient(circle at 20% 30%, rgba(247,198,0,0.5) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(0,151,57,0.4) 0%, transparent 50%),
+                  radial-gradient(circle at 30% 70%, rgba(60,190,241,0.4) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(233,78,60,0.3) 0%, transparent 50%),
+                  #f5f5f5;
+      background-attachment: fixed;
+      color:#111;
+      margin:0;
+      padding:0;
+      line-height:1.6;
+    }
+
+    /* ============================= */
+/* 🎨 BASE GENERAL */
+/* ============================= */
+
+body{
+  font-family:'Poppins', system-ui, sans-serif;
+  background:#f4f6f8;
+  color:#111;
+  margin:0;
+  padding:0;
+  line-height:1.6;
+}
+
+a{
+  color:#009739;
+  text-decoration:none;
+  font-weight:600;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+/* ============================= */
+/* 🔝 BARRA SUPERIOR */
+/* ============================= */
+
+header{
+  width:100%;
+  display:flex;
+  justify-content:flex-start;
+gap:40px;
+  align-items:center;
+  padding:16px 40px;
+  background:#ffffff;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:3px solid #009739;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+}
+
+header h1{
+  font-size:26px;
+  font-weight:800;
+  color:#002776;
+  margin:0;
+  letter-spacing:0.4px;
+}
+
+/* ============================= */
+/* 🧭 MENÚ */
+/* ============================= */
+
+nav{
+  display:flex;
+  align-items:center;
+}
+
+nav a{
+  color:#002776;
+  margin-left:26px;
+  position:relative;
+  padding-bottom:6px;
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:#009739;
+  transition:width .3s ease;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* Botón hamburguesa */
+.menu-toggle{
+  font-size:28px;
+  cursor:pointer;
+  display:none;
+  position:absolute;
+  top:18px;
+  right:20px;
+  z-index:1100;
+}
+
+/* ============================= */
+/* 📱 MENÚ LATERAL (MÓVIL) */
+/* ============================= */
+
+.menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:260px;
+  height:100%;
+  background:#ffffff;
+  box-shadow:-4px 0 16px rgba(0,0,0,.25);
+  padding:70px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  transition:right .35s ease;
+  z-index:999;
+}
+
+.menu.active{
+  right:0;
+}
+
+.menu a{
+  color:#002776;
+  font-size:18px;
+}
+
+.close-btn{
+  position:absolute;
+  top:18px;
+  left:20px;
+  font-size:24px;
+  cursor:pointer;
+  color:#002776;
+}
+
+/* ============================= */
+/* 📐 LAYOUT */
+/* ============================= */
+
+.container{
+  display:flex;
+  max-width:1200px;
+  margin:40px auto;
+  gap:24px;
+  padding:0 20px;
+}
+
+/* ============================= */
+/* 📰 CONTENIDO PRINCIPAL */
+/* ============================= */
+
+main{
+  flex:3;
+  background:#ffffff;
+  padding:32px;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+main h1{
+  color:#009739;
+  margin-bottom:10px;
+}
+
+.meta{
+  color:#666;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.tag{
+  background:#002776;
+  color:#fff;
+  padding:3px 10px;
+  border-radius:999px;
+  font-size:12px;
+  margin-left:8px;
+}
+
+img{
+  width:100%;
+  border-radius:12px;
+  margin:22px 0;
+}
+
+.credit{
+  text-align:center;
+  font-size:12px;
+  color:#666;
+  margin-top:-10px;
+  margin-bottom:24px;
+  font-style:italic;
+}
+
+.bajada{
+  font-size:18px;
+  color:#444;
+  margin-bottom:26px;
+  font-weight:500;
+}
+
+/* ============================= */
+/* 📌 SIDEBAR */
+/* ============================= */
+
+aside{
+  flex:1;
+  background:#ffffff;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+aside h2{
+  font-size:18px;
+  color:#002776;
+  margin-bottom:16px;
+}
+
+.opinion{
+  margin-bottom:16px;
+  padding-bottom:12px;
+  border-bottom:1px solid #eee;
+}
+
+.opinion:last-child{
+  border:none;
+}
+
+.opinion a{
+  color:#009739;
+  font-weight:600;
+}
+
+.opinion small{
+  display:block;
+  color:#666;
+  font-size:12px;
+}
+
+/* ============================= */
+/* 🧩 SUBTÍTULOS */
+/* ============================= */
+
+h2{
+  color:#002776;
+  margin-top:36px;
+  margin-bottom:14px;
+  font-size:22px;
+  font-weight:700;
+}
+
+h3{
+  color:#009739;
+  margin-top:26px;
+  margin-bottom:10px;
+  font-size:18px;
+  font-weight:600;
+}
+
+/* ============================= */
+/* 📱 RESPONSIVE */
+/* ============================= */
+
+@media (max-width:900px){
+  .menu-toggle{
+    display:block;
+  }
+
+  nav{
+    display:none;
+  }
+}
+
+@media (max-width:768px){
+  .container{
+    flex-direction:column;
+    padding:0 12px;
+  }
+
+  header{
+    padding:14px 20px;
+  }
+
+  main{
+    padding:24px;
+  }
+
+  h1{
+    font-size:20px;
+  }
+
+  img{
+    border-radius:8px;
+  }
+}
+
+
+    /* Panel lateral */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;   /* ahora a la izquierda */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+/* Botón hamburguesa */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;   /* oculto por defecto */
+  position: absolute; /* para pegarlo al borde */
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* encima de todo */
+}
+
+/* Panel lateral en móvil */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;   /* oculto completamente fuera de pantalla */
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.active {
+  right: 0; /* aparece */
+}
+
+/* Solo mostrar botón en móvil */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    padding: 0;
+    right: auto;
+  }
+  .close-btn { display: none; }
+}
+
+    .credit {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* === SUBTÍTULOS DEL ARTÍCULO === */
+h2 {
+  color: #002776;
+  margin-top: 35px;
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+h3 {
+  color: #009739;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.bajada {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* ============================= */
+/* 🔗 REDES SOCIALES HEADER */
+/* ============================= */
+
+.social{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-left:20px;
+  margin-left:auto; /* 🔥 esto empuja las redes a la derecha */
+}
+
+.social a{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#f4f6f8;
+  color:#002776;
+  font-size:18px;
+  text-decoration:none;
+  transition:all .25s ease;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+.social a:hover{
+  background:#009739;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+/* Ocultar en móvil (opcional) */
+@media (max-width:900px){
+  .social{
+    display:none;
+  }
+}
+
+  
+  
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+<header>
+  <h1>⚽ Perspectiva</h1>
+  <span class="menu-toggle">☰</span>
+  <nav class="menu">
+    <span class="close-btn">✖</span>
+    <a href="index.html">Inicio</a>
+    <a href="index.html">Noticias</a>
+    <a href="index.html#sobre-mi">Sobre mí</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+
+<div class="social">
+  <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+  <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+</div>
+
+
+</header>
+
+
+  <!-- Contenido y barra lateral -->
+  <div class="container">
+    <!-- Artículo -->
+    <main>
+      <h1>🔥⚽ Inter de Bogotá: ¿proyecto deportivo sólido o reinvención de marca en el fútbol colombiano?</h1>
+      
+      <div class="meta">10 de enero de 2026 <span class="tag">Liga Betplay</span></div>
+<p class="bajada">
+El surgimiento del Inter de Bogotá plantea un nuevo modelo de gestión en la Liga BetPlay, donde identidad, inversión y proyecto deportivo se combinan en una etapa inicial de validación institucional.
+</p>
+
+      <img src="imagenes/base.png" alt="IMAGEN DE LA NOTICIA">
+      <p class="credit">📸 Foto: Federación Colombiana de Fútbol</p>
+
+      <h2>Inter de Bogotá: análisis de un nuevo proyecto institucional en el fútbol colombiano</h2>
+
+      <p>La temporada 2026 del fútbol colombiano marca un punto de inflexión con la aparición del Inter de Bogotá, club que surge tras la transformación institucional de La Equidad. Más allá del impacto visual que supone el cambio de nombre, escudo e identidad, el caso plantea una discusión de fondo: ¿se trata de una reestructuración estratégica con proyección deportiva o de una operación centrada principalmente en la marca?</p>
+
+      <h2>Continuidad jurídica y ruptura simbólica</h2>
+
+      <p>El Inter de Bogotá no nace como un club nuevo en términos legales. Conserva la ficha en Dimayor, la categoría profesional y la historia deportiva de La Equidad. Sin embargo, el club ha optado por una ruptura simbólica deliberada, desligándose de su identidad anterior para construir una narrativa completamente distinta. Este tipo de transformación responde a una tendencia cada vez más frecuente en el fútbol moderno: reformular instituciones tradicionales bajo lógicas de marca global sin perder los activos deportivos existentes.</p>
+      
+      <h2>Identidad de marca y posicionamiento</h2>
+
+      <p>La nueva identidad del Inter de Bogotá apunta a un posicionamiento claro: representar a Bogotá como una ciudad global y moderna. El nombre, la estética visual y el discurso institucional están orientados a un público joven, urbano y digital, alejándose del modelo clásico de club de barrio. Esta estrategia lo diferencia de los equipos históricos de la capital, pero también lo enfrenta a un desafío relevante: construir sentido de pertenencia en un entorno futbolístico ya consolidado.</p>
+      
+      <img src="imagenes/img_4695-1.jpg" alt="IMAGEN DE LA NOTICIA">
+      <p class="credit">📸 Fuente: FIFA</p>
+      
+      <h2>Propiedad e inversión</h2>
+
+      <p>El proyecto está respaldado por inversión extranjera, lo que introduce variables clave como estabilidad financiera, profesionalización administrativa y proyección internacional. No obstante, la experiencia regional demuestra que el capital, por sí solo, no garantiza resultados deportivos ni arraigo social. El éxito del proyecto dependerá de la coherencia entre la visión empresarial y las decisiones deportivas que se adopten a lo largo del tiempo.</p>
+      
+<h2>Proyecto deportivo</h2>
+<p>A nivel deportivo, el Inter de Bogotá ha optado por un discurso prudente. No se han anunciado objetivos desmedidos ni proyectos cortoplacistas. La elección del cuerpo técnico y la conformación de la plantilla sugieren una estrategia basada en el orden institucional, la sostenibilidad financiera y una competitividad progresiva. Este enfoque busca evitar errores comunes en proyectos emergentes que priorizan el impacto mediático sobre la estabilidad deportiva.</p>
+<h2>Impacto en la Liga BetPlay</h2>
+<p>Desde una perspectiva estructural, la llegada del Inter de Bogotá aporta elementos positivos al fútbol colombiano. Eleva el nivel de comunicación y marketing, atrae atención internacional e incentiva procesos de modernización en otros clubes. Si bien su impacto deportivo inmediato es limitado, su influencia institucional puede ser significativa a mediano plazo dentro del ecosistema de la Liga BetPlay.</p>
+<h2>El desafío de la afición</h2>
+<p>El aspecto más complejo del proyecto es la construcción de hinchada. A diferencia de clubes con décadas de historia, el Inter de Bogotá debe generar vínculos emocionales desde cero bajo su nueva identidad. La estrategia actual se apoya en campañas digitales y activaciones de marca, pero la consolidación de una afición solo se logra con resultados, continuidad y relatos deportivos memorables que conecten con la gente.</p>
+
+<img src="imagenes/INTER DE BOGOTA.png" alt="IMAGEN DE LA NOTICIA">
+      <p class="credit">📸 Fuente: FIFA</p>
+
+
+<h2>Evaluación general</h2>
+<p>El Inter de Bogotá no puede ser reducido a una simple operación de marketing, pero tampoco puede ser catalogado aún como un proyecto transformador del fútbol colombiano. Se encuentra en una fase inicial de validación, donde cada decisión deportiva e institucional será determinante para su credibilidad y proyección.</p>
+<p>El Inter de Bogotá representa un modelo contemporáneo de gestión futbolística basado en inversión, marca y planificación estratégica. Su verdadero impacto no se medirá únicamente en títulos o clasificaciones, sino en su capacidad para integrarse al ecosistema futbolístico colombiano sin perder coherencia ni identidad. El proyecto es serio, pero aún está en construcción. En el fútbol, como en cualquier institución, la legitimidad se gana con el tiempo y en la cancha.</p>
+
+      <p><a href="index.html">⬅ Volver a Perspectiva</a></p>
+
+    </main>
+
+    <!-- Barra lateral -->
+    <aside>
+      <h2>📝 Opiniones destacadas</h2>
+      <div class="opinion">
+        <a href="INDEPENDIENTE VS U DE CHILE.html">🚨 Incidentes en el partido Independiente vs Universidad de Chile</a>
+        <small>20 ago 2025</small>
+      </div>
+      
+            <div class="opinion">
+        <a href="COLOMBIA MUNDIAL 2026 .html">⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</a>
+        <small>20 ago 2025</small>
+      </div>
+
+    </aside>
+  </div>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const closeBtn = document.querySelector('.close-btn');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  menu.classList.remove('active');
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
