@@ -1,221 +1,209 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Perspectiva</title>
-  <meta name="description" content="Perspectiva: Opinión y noticias del fútbol desde otro ángulo." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <!-- Conectar CSS externo -->
-  <link rel="stylesheet" href="styles.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escritos | Perspectiva</title>
+  <meta name="description" content="Archivo de análisis, opinión, fútbol colombiano, fútbol internacional y escritura de Perspectiva.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    /* --- Estilos menú móvil --- */
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: #333;
-    }
-
-    .mobile-menu {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      top: 0;
-      right: 0; /* 👉 abre desde la derecha */
-      background-color: white;
-      overflow-x: hidden;
-      transition: 0.3s;
-      padding-top: 60px;
-      box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-
-    .mobile-menu a {
-      display: block;
-      padding: 12px 24px;
-      text-decoration: none;
-      font-size: 18px;
-      color: #333;
-      font-weight: 600;
-    }
-
-    .mobile-menu a:hover {
-      background: #f2f2f2;
-    }
-
-    .mobile-menu .close-btn {
-      position: absolute;
-      top: 20px;
-      left: 25px;
-      font-size: 2rem;
-      text-decoration: none;
-      color: #333;
-      cursor: pointer;
-    }
-
-    /* Mostrar botón en móvil */
-    @media (max-width: 768px) {
-      header nav {
-        display: none;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
-    /* --- Menú normal (PC) --- */
-nav.menu {
-  display: flex; /* se muestra normalmente */
-  gap: 20px;
-}
-
-/* --- Botón hamburguesa (oculto en PC) --- */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: #333;
-}
-
-/* --- Menú móvil lateral (por defecto oculto) --- */
-.mobile-menu {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: white;
-  overflow-x: hidden;
-  transition: 0.3s;
-  padding-top: 60px;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-  z-index: 1000;
-}
-
-.mobile-menu a {
-  display: block;
-  padding: 12px 24px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #333;
-  font-weight: 600;
-}
-
-.mobile-menu a:hover {
-  background: #f2f2f2;
-}
-
-.mobile-menu .close-btn {
-  position: absolute;
-  top: 20px;
-  left: 25px;
-  font-size: 2rem;
-  text-decoration: none;
-  color: #333;
-  cursor: pointer;
-}
-
-/* --- Reglas responsive --- */
-@media (max-width: 768px) {
-  nav.menu {
-    display: none; /* oculta el menú normal */
-  }
-  .menu-toggle {
-    display: block; /* muestra el botón ☰ */
-  }
-}
-
+    :root{--green:#009739;--green-dark:#006b29;--ink:#151515;--muted:#6b7280;--line:#e5e7eb;--paper:#fff;--bg:#f7f8f7}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .header-inner{max-width:1180px;margin:auto;padding:18px 24px;display:flex;align-items:center;gap:34px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:-.02em}
+    .brand-mark{width:34px;height:34px;border:2px solid var(--green);border-radius:50%;display:grid;place-items:center;font-family:"Playfair Display",serif;font-size:22px;color:var(--green);position:relative}
+    .brand-mark::after{content:"";position:absolute;width:7px;height:7px;background:var(--green);border-radius:50%;right:-3px;bottom:1px}
+    nav{margin-left:auto;display:flex;gap:8px}
+    nav a{padding:8px 11px;color:#303030;font-size:14px;font-weight:600;border-radius:6px}
+    nav a:hover{color:var(--green);background:#f0f7f2}
+    .menu-toggle{display:none;margin-left:auto;border:0;background:none;font-size:25px;cursor:pointer}
+    .mobile-menu{display:none}
+    .intro{max-width:1180px;margin:0 auto;padding:72px 24px 42px}
+    .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+    .intro h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(42px,6vw,70px);line-height:1.02;letter-spacing:-.04em;max-width:780px}
+    .intro p{max-width:680px;margin-top:20px;color:var(--muted);font-size:17px}
+    .rule{height:1px;background:var(--line);max-width:1132px;margin:0 auto 34px}
+    .filters{max-width:1132px;margin:0 auto 34px;padding:0 24px;display:flex;gap:8px;flex-wrap:wrap}
+    .filter{border:1px solid var(--line);background:var(--paper);padding:8px 13px;border-radius:999px;font-size:13px;color:#555}
+    .filter.active,.filter:hover{border-color:var(--green);color:var(--green);background:#f0f7f2}
+    .archive{max-width:1132px;margin:auto;padding:0 24px 70px}
+    .archive-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}
+    .archive-head h2{font-family:"Playfair Display",Georgia,serif;font-size:29px}
+    .archive-head span{font-size:13px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:var(--paper);border:1px solid var(--line);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
+    .card img{width:100%;height:190px;display:block;object-fit:cover}
+    .card-body{padding:19px 19px 21px}
+    .meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-bottom:10px}
+    .tag{color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+    .card h3{font-family:"Playfair Display",Georgia,serif;font-size:24px;line-height:1.14;margin-bottom:10px}
+    .card p{font-size:14px;color:#626262;line-height:1.65}
+    .read{display:inline-flex;margin-top:17px;color:var(--green);font-size:13px;font-weight:700}
+    .read:hover{text-decoration:underline}
+    footer{border-top:1px solid var(--line);padding:25px 24px;color:var(--muted);font-size:13px}
+    footer .footer-inner{max-width:1132px;margin:auto;display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}nav{display:none}.menu-toggle{display:block}}
+    @media(max-width:620px){.header-inner{padding:15px 18px}.intro{padding:52px 18px 32px}.archive,.filters{padding-left:18px;padding-right:18px}.grid{grid-template-columns:1fr}.card img{height:210px}.archive-head{align-items:start;gap:10px;flex-direction:column}footer .footer-inner{flex-direction:column}}
   </style>
 </head>
 <body>
-
-  <!-- Header -->
- <header>
-    <div class="header-inner">
-      <div class="logo">⚽ Perspectiva</div>
-      <!-- Botón hamburguesa ahora a la derecha -->
-      <span class="menu-toggle" onclick="openMenu()">☰</span>
-       <nav id="main-menu" class="menu">
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Perspectiva, inicio">
+      <span class="brand-mark">P</span><span>Perspectiva</span>
+    </a>
+    <nav aria-label="Navegación principal">
       <a href="index.html">Inicio</a>
-      <a href="#opiniones">Opiniones</a>
-      <a href="#internacional">Internacional</a>
-      <a href="#colombiano">Colombiano</a>
+      <a href="index.html#opiniones">Opiniones</a>
+      <a href="index.html#internacional">Internacional</a>
+      <a href="index.html#colombiano">Colombiano</a>
       <a href="Escritos.html">Escritos</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#contacto">Contacto</a>
-      <span class="close-btn" onclick="toggleMenu()">✖</span>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="index.html#contacto">Contacto</a>
     </nav>
-    </div>
-  </header>
+    <button class="menu-toggle" aria-label="Abrir menú" onclick="openMenu()">☰</button>
+  </div>
+</header>
 
-  <!-- Menú móvil lateral -->
-  <div id="mobileMenu" class="mobile-menu">
-    <span class="close-btn" onclick="closeMenu()">×</span>
-    <a href="index.html" onclick="closeMenu()">Inicio</a>
-    <a href="#opiniones" onclick="closeMenu()">Opiniones</a>
-    <a href="#internacional" onclick="closeMenu()">Internacional</a>
-    <a href="#colombiano" onclick="closeMenu()">Colombiano</a>
-    <a href="Escritos.html" onclick="closeMenu()">Escritos</a>
-    <a href="#sobre-mi" onclick="closeMenu()">Sobre mí</a>
-    <a href="#contacto" onclick="closeMenu()">Contacto</a>
+<div id="mobileMenu" class="mobile-menu">
+  <a href="index.html">Inicio</a>
+  <a href="index.html#opiniones">Opiniones</a>
+  <a href="index.html#internacional">Internacional</a>
+  <a href="index.html#colombiano">Colombiano</a>
+  <a href="Escritos.html">Escritos</a>
+  <a href="sobre-mi.html">Sobre mí</a>
+  <a href="index.html#contacto">Contacto</a>
+  <button onclick="closeMenu()">Cerrar</button>
+</div>
+
+<section class="intro">
+  <div class="eyebrow">Archivo editorial</div>
+  <h1>Escritos</h1>
+  <p>Una selección de análisis, opinión, fútbol colombiano, fútbol internacional y textos personales. No solo contamos qué pasó. Intentamos entender por qué.</p>
+</section>
+
+<div class="rule"></div>
+
+<div class="filters" aria-label="Categorías">
+  <span class="filter active">Todos</span>
+  <span class="filter">Opinión</span>
+  <span class="filter">Análisis</span>
+  <span class="filter">Fútbol colombiano</span>
+  <span class="filter">Internacional</span>
+  <span class="filter">Escritura</span>
+</div>
+
+<section class="archive">
+  <div class="archive-head">
+    <h2>Archivo</h2>
+    <span>8 publicaciones</span>
   </div>
 
+  <div class="grid">
+    <article class="card">
+      <img src="imagenes/selecao-colombia.jpg" alt="Selección Colombia">
+      <div class="card-body">
+        <div class="meta"><span class="tag">Opinión</span><span>20 de agosto de 2025</span></div>
+        <h3>Misión Mundial 2026: Colombia no puede fallar</h3>
+        <p>Una mirada a las expectativas, los nombres propios y la presión que rodea a Colombia antes de una nueva Copa del Mundo.</p>
+        <a class="read" href="COLOMBIA MUNDIAL 2026 .html">Leer artículo →</a>
+      </div>
+    </article>
 
-  <!-- Contenido principal -->
-  <main>
-    <!-- Noticias/opiniones -->
-    <section id="opiniones" class="grid">
+    <article class="card">
+      <img src="https://cdn.pixabay.com/photo/2015/01/09/11/29/bleachers-594201_1280.jpg" alt="Tribunas de un estadio">
+      <div class="card-body">
+        <div class="meta"><span class="tag">Opinión</span><span>20 de agosto de 2025</span></div>
+        <h3>Incidentes en el partido Independiente vs Universidad de Chile</h3>
+        <p>Una reflexión sobre lo ocurrido alrededor del partido y sobre lo que el fútbol termina mostrando más allá del resultado.</p>
+        <a class="read" href="INDEPENDIENTE VS U DE CHILE.html">Leer artículo →</a>
+      </div>
+    </article>
 
-     <article>
-        <img class="cover" src="https://cdn.pixabay.com/photo/2023/04/26/08/07/chairs-7951845_1280.jpg" alt="Conferencia" />
-        <div class="content">
-          <div class="meta">17 de Septiembre de 2025 <span class="tag">Escrito</span></div>
-          <h2>La Catarsis como Escritura</h2>
-          <p>Te invito a leer un escrito inspirado en una conferencia que mostró cómo la escritura puede ser una forma de catarsis: un camino para liberar emociones, transformar experiencias difíciles y encontrar bienestar.</p>
-          <a href="CONFERENCIA.html" class="readmore">Seguir leyendo →</a>
-        </div>
-      </article>
+    <article class="card">
+      <img src="imagenes/CVSA.jpeg" alt="James Rodríguez y Lionel Messi">
+      <div class="card-body">
+        <div class="meta"><span class="tag">Opinión</span><span>4 de septiembre de 2025</span></div>
+        <h3>Colombia merece mirar hacia adentro</h3>
+        <p>Una reflexión sobre James Rodríguez, el legado de una generación y la manera en que Colombia reconoce a sus referentes.</p>
+        <a class="read" href="NOTICIA MESSI.html">Leer artículo →</a>
+      </div>
+    </article>
 
-       <article>
-        <img class="cover" src="https://cdn.pixabay.com/photo/2019/06/07/02/12/book-4257405_640.jpg" alt="Poemas" />
-        <div class="content">
-          <div class="meta">30 de Septiembre de 2025 <span class="tag">Poema</span></div>
-          <h2>Mis Poemas</h2>
-          <p>Te invito a leer dos poemas que escribí y que reflejan, desde la metáfora y la emoción, la manera en que me veo y vivo la vida. </p>
-          <a href="POEMAS.html" class="readmore">Seguir leyendo →</a>
-        </div>
-      </article> 
-      
-    </section>
+    <article class="card">
+      <img src="imagenes/JBHAM.jpeg" alt="Real Madrid y Barcelona">
+      <div class="card-body">
+        <div class="meta"><span class="tag">Internacional</span><span>26 de octubre de 2025</span></div>
+        <h3>Madrid y Barça: más que un partido, una batalla de ideales</h3>
+        <p>El clásico español entendido como un enfrentamiento que trasciende el marcador y representa identidades distintas.</p>
+        <a class="read" href="EL CLASICO MUNDIAL.html">Leer artículo →</a>
+      </div>
+    </article>
 
- 
+    <article class="card">
+      <img src="imagenes/base.png" alt="Inter de Bogotá">
+      <div class="card-body">
+        <div class="meta"><span class="tag">Fútbol colombiano</span><span>10 de enero de 2026</span></div>
+        <h3>Inter de Bogotá: ¿proyecto deportivo sólido o reinvención de marca?</h3>
+        <p>Un análisis sobre identidad, inversión, continuidad jurídica y proyecto deportivo en el fútbol colombiano.</p>
+        <a class="read" href="INTER DE BOGOTA.html">Leer artículo →</a>
+      </div>
+    </article>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Perspectiva</p>
-  </footer>
+    <article class="card">
+      <img src="imagenes/soccer-2650433.jpg" alt="Balón de fútbol">
+      <div class="card-body">
+        <div class="meta"><span class="tag">Ensayo</span><span>26 de noviembre de 2025</span></div>
+        <h3>Más que un partido</h3>
+        <p>Un texto que utiliza el fútbol como punto de partida para hablar de aquello que ocurre alrededor de la cancha.</p>
+        <a class="read" href="MAS QUE UN PARTIDO.html">Leer artículo →</a>
+      </div>
+    </article>
 
-  <!-- Script menú -->
-  <script>
-    function openMenu() {
-      document.getElementById("mobileMenu").style.width = "250px";
-    }
-    function closeMenu() {
-      document.getElementById("mobileMenu").style.width = "0";
-    }
-  </script>
+    <article class="card">
+      <img src="https://cdn.pixabay.com/photo/2015/01/09/11/29/bleachers-594201_1280.jpg" alt="Tribunas de un estadio">
+      <div class="card-body">
+        <div class="meta"><span class="tag">Escritura</span><span>16 de septiembre de 2025</span></div>
+        <h3>La escritura como catarsis</h3>
+        <p>Una reflexión sobre la escritura como herramienta para procesar experiencias, emociones y momentos difíciles.</p>
+        <a class="read" href="CONFERENCIA.html">Leer escrito →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://cdn.pixabay.com/photo/2019/06/07/02/12/book-4257405_640.jpg" alt="Libro abierto">
+      <div class="card-body">
+        <div class="meta"><span class="tag">Escritura</span><span>30 de septiembre de 2025</span></div>
+        <h3>Mis poemas</h3>
+        <p>Dos poemas personales sobre la identidad, el cuerpo, el fútbol y la forma de entender la vida desde la metáfora.</p>
+        <a class="read" href="POEMAS.html">Leer escrito →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Perspectiva</span>
+    <span>Periodismo deportivo desde otro ángulo.</span>
+  </div>
+</footer>
+
+<script>
+function openMenu(){
+  const menu=document.getElementById("mobileMenu");
+  menu.style.display="flex";
+}
+function closeMenu(){
+  document.getElementById("mobileMenu").style.display="none";
+}
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
