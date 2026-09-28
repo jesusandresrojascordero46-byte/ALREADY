@@ -112,4 +112,4 @@ img{display:block;width:100%}
 }
 
 /* Wordmark integrado */
-.brand-wordmark{display:inline-flex;align-items:baseline;font-size:1.12rem;font-weight:800;letter-spacing:.08em;color:inherit;text-decoration:none}.brand-p{font-family:"Playfair Display",serif;font-size:1.45em;line-height:.8;font-weight:700}.brand-wordmark:hover{opacity:.82}
+.brand-wordmark{display:inline-flex;align-items:baseline;font-size:1.12rem;font-weight:800;letter-spacing:.08em;color:inherit;text-decoration:none}.brand-p{font-family:"Playfair Display",serif;font-size:1.45em;line-height:.8;font-weight:700;color:#fff;background:#178a55;border-radius:5px;padding:.08em .16em .04em;margin-right:.02em}.brand-wordmark:hover{opacity:.82}
