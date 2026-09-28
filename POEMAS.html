@@ -1,273 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perspectiva - POEMAS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body{
-      font-family:'Poppins', system-ui, sans-serif;
-      background: radial-gradient(circle at 20% 30%, rgba(247,198,0,0.5) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(0,151,57,0.4) 0%, transparent 50%),
-                  radial-gradient(circle at 30% 70%, rgba(60,190,241,0.4) 0%, transparent 50%),
-                  radial-gradient(circle at 70% 80%, rgba(233,78,60,0.3) 0%, transparent 50%),
-                  #f5f5f5;
-      background-attachment: fixed;
-      color:#111;
-      margin:0;
-      padding:0;
-      line-height:1.6;
-    }
-
-    /* === BARRA SUPERIOR === */
-    header{
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 40px;
-      background:#fff;
-      color:#002776;
-      border-radius:0 0 16px 16px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.1);
-      box-sizing:border-box;
-    }
-    header h1{
-      font-size:24px;
-      color:#002776;
-      margin:0;
-    }
-    nav a{
-      color:#002776;
-      text-decoration:none;
-      margin-left:20px;
-      font-weight:600;
-    }
-    nav a:hover{text-decoration:underline;}
-
-    /* === LAYOUT PRINCIPAL === */
-    .container{
-      display:flex;
-      max-width:1200px;
-      margin:40px auto;
-      gap:20px;
-      padding:0 20px;
-    }
-
-    /* === CONTENIDO PRINCIPAL === */
-    main{
-      flex:3;
-      background:#fff;
-      padding:30px;
-      border-radius:16px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    h1{color:#009739;margin-bottom:10px;}
-    .meta{color:#666;margin-bottom:20px;font-size:14px;}
-    .tag{
-      background:#002776;
-      color:#fff;
-      padding:2px 8px;
-      border-radius:999px;
-      font-size:12px;
-      margin-left:8px;
-    }
-    img{width:100%;border-radius:12px;margin:20px 0;}
-    a{color:#009739;text-decoration:none;font-weight:600;}
-    a:hover{text-decoration:underline;}
-
-    /* === SIDEBAR === */
-    aside{
-      flex:1;
-      background:#fff;
-      padding:20px;
-      border-radius:16px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    }
-    aside h2{
-      font-size:18px;
-      color:#002776;
-      margin-bottom:15px;
-    }
-    .opinion{
-      margin-bottom:15px;
-      padding-bottom:10px;
-      border-bottom:1px solid #eee;
-    }
-    .opinion:last-child{border:none;}
-    .opinion a{
-      color:#009739;
-      font-weight:600;
-      text-decoration:none;
-    }
-    .opinion a:hover{text-decoration:underline;}
-    .opinion small{display:block;color:#666;font-size:12px;}
-
-    /* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* columnas pasan a estar una debajo de otra */
-    padding: 0 10px;
-  }
-
-  main {
-    flex: 1; /* ocupa todo el ancho */
-    margin-bottom: 20px;
-  }
-
-  aside {
-    flex: 1; /* ocupa todo el ancho */
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start; /* logo y menú uno debajo del otro */
-    padding: 15px 20px;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  nav a {
-    margin: 0 10px 10px 0; /* enlaces más cómodos para móvil */
-    display: inline-block;
-  }
-
-  h1 {
-    font-size: 20px; /* títulos más pequeños en celular */
-  }
-
-  img {
-    border-radius: 8px;
-  }
-}
-
-    /* Panel lateral */
-.menu {
-  position: fixed;
-  top: 0;
-  right: -260px;
-  width: 260px;
-  height: 100%;
-  background: #fff;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: right 0.3s ease;
-  z-index: 999;
-}
-
-.menu.active {
-  right: 0;
-}
-
-.close-btn {
-  position: absolute;
-  top: 15px;
-  left: 20px;   /* ahora a la izquierda */
-  font-size: 24px;
-  cursor: pointer;
-}
-
-
-@media (min-width: 901px) {
-  .menu {
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
-    box-shadow: none;
-    flex-direction: row;
-    padding: 0;
-    right: auto;
-  }
-  .close-btn { display: none; }
-}
-/* Botón hamburguesa */
-.menu-toggle {
-  font-size: 28px;
-  cursor: pointer;
-  display: none;   /* oculto por defecto */
-  position: absolute; /* para pegarlo al borde */
-  top: 20px;
-  right: 20px;
-  z-index: 1000; /* encima de todo */
-}
-
-/* Panel lateral en móvil */
-.menu {
-  position: fixed;
-  top: 0;
-  right: -100%;   /* oculto completamente fuera de pantalla */
-  width: 260px;
-  height: 100%;
-  background: #fff;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: right 0.3s ease;
-  z-index: 999;
-}
-
-.menu.active {
-  right: 0; /* aparece */
-}
-
-/* Solo mostrar botón en móvil */
-@media (max-width: 900px) {
-  .menu-toggle {
-    display: block;
-  }
-}
-
-@media (min-width: 901px) {
-  .menu {
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
-    box-shadow: none;
-    flex-direction: row;
-    padding: 0;
-    right: auto;
-  }
-  .close-btn { display: none; }
-}
-
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="⚽ Perspectiva">
+<title>⚽ Perspectiva | Perspectiva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.article-page{max-width:1120px;margin:0 auto;padding:4.5rem 1.25rem 6rem}.article-layout{display:grid;grid-template-columns:minmax(0,760px) 260px;gap:4rem;align-items:start}.article-kicker{font-size:.78rem;font-weight:700;letter-spacing:.14em;color:#17863d}.article-page h1{font-family:"Playfair Display",serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;margin:.7rem 0 1rem}.article-meta{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;color:#747873;font-size:.9rem;margin-bottom:1.8rem}.article-tag{border:1px solid #17863d;color:#17863d;padding:.2rem .65rem;border-radius:999px;font-size:.75rem;font-weight:700}.article-lead{font-size:1.25rem;line-height:1.65;color:#555;font-weight:500;margin-bottom:2rem}.article-content{font-size:1.08rem;line-height:1.85;color:#242724}.article-content h2{font-family:"Playfair Display",serif;font-size:2rem;line-height:1.2;margin:3rem 0 1rem;color:#171a18}.article-content h3{font-size:1.25rem;margin:2rem 0 .7rem;color:#17863d}.article-content p{margin:0 0 1.25rem}.article-content img{width:100%;height:auto;display:block;margin:2rem 0 .5rem}.article-credit{font-size:.78rem;color:#7a7e7a;text-align:center;margin:0 0 2rem}.article-back{display:inline-block;margin-top:2rem;color:#17863d;font-weight:700}.article-aside{border-left:1px solid #ddd;padding-left:1.5rem;position:sticky;top:6rem}.article-aside h2{font-family:"Playfair Display",serif;font-size:1.35rem;margin:0 0 1rem}.article-aside a{display:block;padding:.8rem 0;border-top:1px solid #ddd;color:#292d2a}.article-aside small{display:block;color:#7a7e7a;margin-top:.25rem}@media(max-width:850px){.article-layout{grid-template-columns:1fr}.article-aside{border-left:0;border-top:1px solid #ddd;padding:1.5rem 0 0;position:static}.article-page{padding-top:3rem}}
+</style>
 </head>
 <body>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="index.html" aria-label="Perspectiva, inicio"><span class="brand-wordmark"><span class="brand-p">P</span>ERSPECTIVA</span></a>
+<button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="site-menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav id="site-menu" class="site-nav" aria-label="Navegación principal">
+<a href="index.html">Inicio</a><a href="Escritos.html">Portafolio</a><a href="index.html#analisis">Análisis</a><a href="index.html#opinion">Opinión</a><a href="index.html#sobre-mi">Sobre mí</a>
+</nav></div></header>
+<main class="article-page"><div class="article-layout"><article>
+<div class="article-kicker">PERSPECTIVA · Poema</div>
+<h1>⚽ Perspectiva</h1>
+<div class="article-meta"><span>30 de septiembre de 2025 Poema</span><span class="article-tag">Poema</span></div>
+<img src="https://cdn.pixabay.com/photo/2019/06/07/02/12/book-4257405_640.jpg" alt="⚽ Perspectiva">
+<div class="article-content">
 
-  <!-- Barra superior -->
-<header>
-  <h1>⚽ Perspectiva</h1>
-  <span class="menu-toggle">☰</span>
-  <nav class="menu">
-    <span class="close-btn">✖</span>
-    <a href="index.html">Inicio</a>
-    <a href="index.html">Noticias</a>
-    <a href="index.html#sobre-mi">Sobre mí</a>
-    <a href="index.html#contacto">Contacto</a>
-  </nav>
-</header>
+      
+      
 
-
-  <!-- Contenido y barra lateral -->
-  <div class="container">
-    <!-- Artículo -->
-    <main>
-      <h1>MIS POEMAS</h1>
-      <div class="meta">30 de septiembre de 2025 <span class="tag">Poema</span></div>
-
-      <img src="https://cdn.pixabay.com/photo/2019/06/07/02/12/book-4257405_640.jpg" alt="IMAGEN DE LA NOTICIA">
+      
 
       <p>SER DELGADO, NO ESTA MAL</p>
        <p>Soy delgado, lo sé, casi un suspiro,
@@ -308,50 +71,17 @@ cada giro es fuerza, cada bote, intento.
 Y así como el fútbol nunca se detiene,
 mi sueño avanza, mi historia se mantiene.</p>
       
-<p><a href="index.html">⬅ Volver a Perspectiva</a></p>
+
       
-    </main>
-
-    <!-- Barra lateral -->
-    <aside>
-      <h2>📝 Opiniones destacadas</h2>
-      <div class="opinion">
-        <a href="INDEPENDIENTE VS U DE CHILE.html">🚨 Incidentes en el partido Independiente vs Universidad de Chile</a>
-        <small>20 ago 2025</small>
-      </div>
-
-    </aside>
-  </div>
-
+    
+</div>
+<a class="article-back" href="Escritos.html">← Volver al portafolio</a>
+</article>
+<aside class="article-aside"><h2>Explora Perspectiva</h2><a href="Escritos.html">Archivo completo<small>Análisis, opinión y escritos</small></a><a href="index.html">Inicio<small>La portada de Perspectiva</small></a><a href="index.html#sobre-mi">Sobre mí<small>Quién soy y qué proyecto</small></a></aside>
+</div></main>
+<footer class="site-footer"><div class="footer-inner"><div><span class="brand-wordmark"><span class="brand-p">P</span>ERSPECTIVA</span><p>Periodismo deportivo desde otro ángulo.</p></div><p class="copyright">© 2026 Jesús Andrés Rojas Cordero</p></div></footer>
 <script>
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
-const closeBtn = document.querySelector('.close-btn');
-
-menuToggle.addEventListener('click', () => {
-  menu.classList.add('active');
-});
-
-closeBtn.addEventListener('click', () => {
-  menu.classList.remove('active');
-});
+const toggle=document.querySelector('.menu-toggle'),menu=document.querySelector('.site-nav');
+toggle.addEventListener('click',()=>{const open=menu.classList.toggle('is-open');toggle.setAttribute('aria-expanded',open);toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});
 </script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body></html>
