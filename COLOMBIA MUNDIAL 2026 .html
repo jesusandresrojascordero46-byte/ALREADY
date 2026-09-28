@@ -1,536 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <style>
-
-*{
-  box-sizing:border-box;
-}
-
-
-    body{
-      font-family:'Poppins', system-ui, sans-serif;
-      background: radial-gradient(circle at 20% 30%, rgba(247,198,0,0.5) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(0,151,57,0.4) 0%, transparent 50%),
-                  radial-gradient(circle at 30% 70%, rgba(60,190,241,0.4) 0%, transparent 50%),
-                  radial-gradient(circle at 70% 80%, rgba(233,78,60,0.3) 0%, transparent 50%),
-                  #f5f5f5;
-      background-attachment: fixed;
-      color:#111;
-      margin:0;
-      padding:0;
-      line-height:1.6;
-    }
-
-    /* ============================= */
-/* 🎨 BASE GENERAL */
-/* ============================= */
-
-body{
-  font-family:'Poppins', system-ui, sans-serif;
-  background:#f4f6f8;
-  color:#111;
-  margin:0;
-  padding:0;
-  line-height:1.6;
-}
-
-a{
-  color:#009739;
-  text-decoration:none;
-  font-weight:600;
-}
-
-a:hover{
-  text-decoration:underline;
-}
-
-/* ============================= */
-/* 🔝 BARRA SUPERIOR */
-/* ============================= */
-
-header{
-  width:100%;
-  display:flex;
-  justify-content:flex-start;
-gap:40px;
-  align-items:center;
-  padding:16px 40px;
-  background:#ffffff;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  border-bottom:3px solid #009739;
-  box-shadow:0 6px 18px rgba(0,0,0,0.12);
-}
-
-header h1{
-  font-size:26px;
-  font-weight:800;
-  color:#002776;
-  margin:0;
-  letter-spacing:0.4px;
-}
-
-/* ============================= */
-/* 🧭 MENÚ */
-/* ============================= */
-
-nav{
-  display:flex;
-  align-items:center;
-}
-
-nav a{
-  color:#002776;
-  margin-left:26px;
-  position:relative;
-  padding-bottom:6px;
-}
-
-nav a::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:0;
-  height:2px;
-  background:#009739;
-  transition:width .3s ease;
-}
-
-nav a:hover::after{
-  width:100%;
-}
-
-/* Botón hamburguesa */
-.menu-toggle{
-  font-size:28px;
-  cursor:pointer;
-  display:none;
-  position:absolute;
-  top:18px;
-  right:20px;
-  z-index:1100;
-}
-
-/* ============================= */
-/* 📱 MENÚ LATERAL (MÓVIL) */
-/* ============================= */
-
-.menu{
-  position:fixed;
-  top:0;
-  right:-100%;
-  width:260px;
-  height:100%;
-  background:#ffffff;
-  box-shadow:-4px 0 16px rgba(0,0,0,.25);
-  padding:70px 24px;
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-  transition:right .35s ease;
-  z-index:999;
-}
-
-.menu.active{
-  right:0;
-}
-
-.menu a{
-  color:#002776;
-  font-size:18px;
-}
-
-.close-btn{
-  position:absolute;
-  top:18px;
-  left:20px;
-  font-size:24px;
-  cursor:pointer;
-  color:#002776;
-}
-
-/* ============================= */
-/* 📐 LAYOUT */
-/* ============================= */
-
-.container{
-  display:flex;
-  max-width:1200px;
-  margin:40px auto;
-  gap:24px;
-  padding:0 20px;
-}
-
-/* ============================= */
-/* 📰 CONTENIDO PRINCIPAL */
-/* ============================= */
-
-main{
-  flex:3;
-  background:#ffffff;
-  padding:32px;
-  border-radius:16px;
-  box-shadow:0 6px 18px rgba(0,0,0,.12);
-}
-
-main h1{
-  color:#009739;
-  margin-bottom:10px;
-}
-
-.meta{
-  color:#666;
-  font-size:14px;
-  margin-bottom:18px;
-}
-
-.tag{
-  background:#002776;
-  color:#fff;
-  padding:3px 10px;
-  border-radius:999px;
-  font-size:12px;
-  margin-left:8px;
-}
-
-img{
-  width:100%;
-  border-radius:12px;
-  margin:22px 0;
-}
-
-.credit{
-  text-align:center;
-  font-size:12px;
-  color:#666;
-  margin-top:-10px;
-  margin-bottom:24px;
-  font-style:italic;
-}
-
-.bajada{
-  font-size:18px;
-  color:#444;
-  margin-bottom:26px;
-  font-weight:500;
-}
-
-/* ============================= */
-/* 📌 SIDEBAR */
-/* ============================= */
-
-aside{
-  flex:1;
-  background:#ffffff;
-  padding:22px;
-  border-radius:16px;
-  box-shadow:0 6px 18px rgba(0,0,0,.12);
-}
-
-aside h2{
-  font-size:18px;
-  color:#002776;
-  margin-bottom:16px;
-}
-
-.opinion{
-  margin-bottom:16px;
-  padding-bottom:12px;
-  border-bottom:1px solid #eee;
-}
-
-.opinion:last-child{
-  border:none;
-}
-
-.opinion a{
-  color:#009739;
-  font-weight:600;
-}
-
-.opinion small{
-  display:block;
-  color:#666;
-  font-size:12px;
-}
-
-/* ============================= */
-/* 🧩 SUBTÍTULOS */
-/* ============================= */
-
-h2{
-  color:#002776;
-  margin-top:36px;
-  margin-bottom:14px;
-  font-size:22px;
-  font-weight:700;
-}
-
-h3{
-  color:#009739;
-  margin-top:26px;
-  margin-bottom:10px;
-  font-size:18px;
-  font-weight:600;
-}
-
-/* ============================= */
-/* 📱 RESPONSIVE */
-/* ============================= */
-
-@media (max-width:900px){
-  .menu-toggle{
-    display:block;
-  }
-
-  nav{
-    display:none;
-  }
-}
-
-@media (max-width:768px){
-  .container{
-    flex-direction:column;
-    padding:0 12px;
-  }
-
-  header{
-    padding:14px 20px;
-  }
-
-  main{
-    padding:24px;
-  }
-
-  h1{
-    font-size:20px;
-  }
-
-  img{
-    border-radius:8px;
-  }
-}
-
-
-    /* Panel lateral */
-.menu {
-  position: fixed;
-  top: 0;
-  right: -260px;
-  width: 260px;
-  height: 100%;
-  background: #fff;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: right 0.3s ease;
-  z-index: 999;
-}
-
-.menu.active {
-  right: 0;
-}
-
-.close-btn {
-  position: absolute;
-  top: 15px;
-  left: 20px;   /* ahora a la izquierda */
-  font-size: 24px;
-  cursor: pointer;
-}
-
-
-@media (min-width: 901px) {
-  .menu {
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
-    box-shadow: none;
-    flex-direction: row;
-    padding: 0;
-    right: auto;
-  }
-  .close-btn { display: none; }
-}
-/* Botón hamburguesa */
-.menu-toggle {
-  font-size: 28px;
-  cursor: pointer;
-  display: none;   /* oculto por defecto */
-  position: absolute; /* para pegarlo al borde */
-  top: 20px;
-  right: 20px;
-  z-index: 1000; /* encima de todo */
-}
-
-/* Panel lateral en móvil */
-.menu {
-  position: fixed;
-  top: 0;
-  right: -100%;   /* oculto completamente fuera de pantalla */
-  width: 260px;
-  height: 100%;
-  background: #fff;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: right 0.3s ease;
-  z-index: 999;
-}
-
-.menu.active {
-  right: 0; /* aparece */
-}
-
-/* Solo mostrar botón en móvil */
-@media (max-width: 900px) {
-  .menu-toggle {
-    display: block;
-  }
-}
-
-@media (min-width: 901px) {
-  .menu {
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
-    box-shadow: none;
-    flex-direction: row;
-    padding: 0;
-    right: auto;
-  }
-  .close-btn { display: none; }
-}
-
-    .credit {
-  text-align: center;
-  font-size: 12px;
-  color: #666;
-  margin-top: -10px;
-  margin-bottom: 20px;
-  font-style: italic;
-}
-
-/* === SUBTÍTULOS DEL ARTÍCULO === */
-h2 {
-  color: #002776;
-  margin-top: 35px;
-  margin-bottom: 12px;
-  font-size: 22px;
-  font-weight: 700;
-}
-
-h3 {
-  color: #009739;
-  margin-top: 25px;
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.bajada {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 25px;
-  font-weight: 500;
-}
-
-/* ============================= */
-/* 🔗 REDES SOCIALES HEADER */
-/* ============================= */
-
-.social{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin-left:20px;
-  margin-left:auto; /* 🔥 esto empuja las redes a la derecha */
-}
-
-.social a{
-  width:38px;
-  height:38px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:#f4f6f8;
-  color:#002776;
-  font-size:18px;
-  text-decoration:none;
-  transition:all .25s ease;
-  box-shadow:0 2px 6px rgba(0,0,0,0.15);
-}
-
-.social a:hover{
-  background:#009739;
-  color:#fff;
-  transform:translateY(-2px);
-}
-
-/* Ocultar en móvil (opcional) */
-@media (max-width:900px){
-  .social{
-    display:none;
-  }
-}
-
-  
-  
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="⚽ Perspectiva">
+<title>⚽ Perspectiva | Perspectiva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.article-page{max-width:1120px;margin:0 auto;padding:4.5rem 1.25rem 6rem}.article-layout{display:grid;grid-template-columns:minmax(0,760px) 260px;gap:4rem;align-items:start}.article-kicker{font-size:.78rem;font-weight:700;letter-spacing:.14em;color:#17863d}.article-page h1{font-family:"Playfair Display",serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1.02;margin:.7rem 0 1rem}.article-meta{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;color:#747873;font-size:.9rem;margin-bottom:1.8rem}.article-tag{border:1px solid #17863d;color:#17863d;padding:.2rem .65rem;border-radius:999px;font-size:.75rem;font-weight:700}.article-lead{font-size:1.25rem;line-height:1.65;color:#555;font-weight:500;margin-bottom:2rem}.article-content{font-size:1.08rem;line-height:1.85;color:#242724}.article-content h2{font-family:"Playfair Display",serif;font-size:2rem;line-height:1.2;margin:3rem 0 1rem;color:#171a18}.article-content h3{font-size:1.25rem;margin:2rem 0 .7rem;color:#17863d}.article-content p{margin:0 0 1.25rem}.article-content img{width:100%;height:auto;display:block;margin:2rem 0 .5rem}.article-credit{font-size:.78rem;color:#7a7e7a;text-align:center;margin:0 0 2rem}.article-back{display:inline-block;margin-top:2rem;color:#17863d;font-weight:700}.article-aside{border-left:1px solid #ddd;padding-left:1.5rem;position:sticky;top:6rem}.article-aside h2{font-family:"Playfair Display",serif;font-size:1.35rem;margin:0 0 1rem}.article-aside a{display:block;padding:.8rem 0;border-top:1px solid #ddd;color:#292d2a}.article-aside small{display:block;color:#7a7e7a;margin-top:.25rem}@media(max-width:850px){.article-layout{grid-template-columns:1fr}.article-aside{border-left:0;border-top:1px solid #ddd;padding:1.5rem 0 0;position:static}.article-page{padding-top:3rem}}
+</style>
 </head>
 <body>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="index.html" aria-label="Perspectiva, inicio"><span class="brand-wordmark"><span class="brand-p">P</span>ERSPECTIVA</span></a>
+<button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="site-menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<nav id="site-menu" class="site-nav" aria-label="Navegación principal">
+<a href="index.html">Inicio</a><a href="Escritos.html">Portafolio</a><a href="index.html#analisis">Análisis</a><a href="index.html#opinion">Opinión</a><a href="index.html#sobre-mi">Sobre mí</a>
+</nav></div></header>
+<main class="article-page"><div class="article-layout"><article>
+<div class="article-kicker">PERSPECTIVA · Mundial 2026</div>
+<h1>⚽ Perspectiva</h1>
+<div class="article-meta"><span>20 de agosto de 2025 Mundial 2026</span><span class="article-tag">Mundial 2026</span></div>
+<img src="imagenes/selecao-colombia.jpg" alt="⚽ Perspectiva">
+<div class="article-content">
 
-  <!-- Barra superior -->
-<header>
-  <h1>⚽ Perspectiva</h1>
-  <span class="menu-toggle">☰</span>
-  <nav class="menu">
-    <span class="close-btn">✖</span>
-    <a href="index.html">Inicio</a>
-    <a href="index.html">Noticias</a>
-    <a href="index.html#sobre-mi">Sobre mí</a>
-    <a href="index.html#contacto">Contacto</a>
-  </nav>
-
-<div class="social">
-  <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-  <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-  <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-</div>
-
-
-</header>
-
-
-  <!-- Contenido y barra lateral -->
-  <div class="container">
-    <!-- Artículo -->
-    <main>
-      <h1>⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</h1>
       
-      <div class="meta">20 de agosto de 2025 <span class="tag">Mundial 2026</span></div>
-<p class="bajada">
-Colombia llega al Mundial 2026 con ilusión, presión y una generación que está obligada a responder.
-</p>
+      
+      
 
-      <img src="imagenes/selecao-colombia.jpg" alt="IMAGEN DE LA NOTICIA">
-      <p class="credit">📸 Foto: Federación Colombiana de Fútbol</p>
+
+      
+      
 
       <h2>La expectativa de todo un país</h2>
 
@@ -546,8 +49,8 @@ Colombia llega al Mundial 2026 con ilusión, presión y una generación que est�
 
       <p>Bajo la dirección de Néstor Lorenzo, Colombia plantea estrategias claras: presión alta para recuperar rápido, transiciones veloces aprovechando la rapidez de Díaz y Muñoz, y un mediocampo creativo donde James distribuye cada balón. La flexibilidad táctica —alternando entre 4-3-3 ofensivo y 4-2-3-1 más defensivo— permite adaptarse al rival sin perder identidad. Lorenzo sabe que el equilibrio entre disciplina y creatividad será la clave para que la Tricolor cumpla las expectativas. </p>
       
-      <img src="imagenes/clasificados Mundial 2026.png" alt="IMAGEN DE LA NOTICIA">
-      <p class="credit">📸 Fuente: FIFA</p>
+      
+      
       
       <h2>Presión, madurez y una oportunidad histórica</h2>
 
@@ -555,60 +58,17 @@ Colombia llega al Mundial 2026 con ilusión, presión y una generación que est�
 
       <p>El Mundial 2026 será mucho más que un torneo: será el test final de una generación y la posible despedida de su estrella. Llegar a cuartos de final y aspirar más no es solo un objetivo: es un mandato histórico. La Tricolor tiene el talento, la táctica y el corazón; ahora le toca demostrar que está a la altura de los sueños de todo un país. </p>
       
-      <p><a href="index.html">⬅ Volver a Perspectiva</a></p>
-
-    </main>
-
-    <!-- Barra lateral -->
-    <aside>
-      <h2>📝 Opiniones destacadas</h2>
-      <div class="opinion">
-        <a href="INDEPENDIENTE VS U DE CHILE.html">🚨 Incidentes en el partido Independiente vs Universidad de Chile</a>
-        <small>20 ago 2025</small>
-      </div>
       
-            <div class="opinion">
-        <a href="COLOMBIA MUNDIAL 2026 .html">⚽🔥 Misión Mundial 2026: Colombia no puede fallar 🇨🇴</a>
-        <small>20 ago 2025</small>
-      </div>
 
-    </aside>
-  </div>
-
+    
+</div>
+<a class="article-back" href="Escritos.html">← Volver al portafolio</a>
+</article>
+<aside class="article-aside"><h2>Explora Perspectiva</h2><a href="Escritos.html">Archivo completo<small>Análisis, opinión y escritos</small></a><a href="index.html">Inicio<small>La portada de Perspectiva</small></a><a href="index.html#sobre-mi">Sobre mí<small>Quién soy y qué proyecto</small></a></aside>
+</div></main>
+<footer class="site-footer"><div class="footer-inner"><div><span class="brand-wordmark"><span class="brand-p">P</span>ERSPECTIVA</span><p>Periodismo deportivo desde otro ángulo.</p></div><p class="copyright">© 2026 Jesús Andrés Rojas Cordero</p></div></footer>
 <script>
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.menu');
-const closeBtn = document.querySelector('.close-btn');
-
-menuToggle.addEventListener('click', () => {
-  menu.classList.add('active');
-});
-
-closeBtn.addEventListener('click', () => {
-  menu.classList.remove('active');
-});
+const toggle=document.querySelector('.menu-toggle'),menu=document.querySelector('.site-nav');
+toggle.addEventListener('click',()=>{const open=menu.classList.toggle('is-open');toggle.setAttribute('aria-expanded',open);toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});
 </script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body></html>
