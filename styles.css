@@ -78,6 +78,11 @@ img{display:block;width:100%}
 .footer-links{display:flex;gap:25px;font-size:12px}
 .footer-links a:hover{color:#80cfa4}
 .copyright{grid-column:1/-1;border-top:1px solid #303734;padding-top:20px}
+
+/* Estilo editorial compartido para los artículos */
+.article-page h1{font-size:clamp(2.1rem,4.5vw,3.8rem) !important;line-height:1.05 !important;letter-spacing:-.025em}
+.article-page{scroll-margin-top:76px}
+
 @media(max-width:900px){
   .menu-toggle{display:block}
   .site-nav{position:absolute;top:76px;right:20px;width:260px;padding:18px 22px;background:#fff;border:1px solid var(--line);box-shadow:0 16px 40px rgba(0,0,0,.12);display:none;flex-direction:column;align-items:stretch;gap:0}
