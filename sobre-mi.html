@@ -10,74 +10,138 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .about-page-hero{padding:5rem 0 3rem;display:grid;grid-template-columns:1.2fr .8fr;gap:5rem;align-items:end}.about-page-hero h1{font-family:"Playfair Display",serif;font-size:clamp(3.2rem,7vw,6.5rem);line-height:.92;margin:.4rem 0 1.5rem}.about-page-hero .lead{font-size:1.18rem;line-height:1.7;color:#555;max-width:650px}.about-page-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}.about-block{padding:4rem 0;border-top:1px solid #ddd;display:grid;grid-template-columns:.35fr 1fr;gap:4rem}.about-block h2{font-family:"Playfair Display",serif;font-size:2.4rem;margin:0}.about-block p{font-size:1.05rem;line-height:1.85;color:#555;max-width:760px}.vision{background:#f2f3f0;padding:4rem;margin:2rem 0 5rem}.vision p{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3.5vw,3rem);line-height:1.25;max-width:850px;margin:0}.about-signature{font-family:"Playfair Display",serif;font-size:1.5rem;margin-top:2rem}.about-actions{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem}
-@media(max-width:800px){.about-page-hero{grid-template-columns:1fr;gap:2rem;padding-top:3.5rem}.about-page-photo{max-width:500px}.about-block{grid-template-columns:1fr;gap:1rem;padding:3rem 0}}
+    .about-page{padding-bottom:100px}
+    .about-hero{padding:88px 0 72px;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;border-bottom:1px solid var(--line)}
+    .about-hero h1{font-family:var(--serif);font-size:clamp(52px,7vw,88px);line-height:.96;letter-spacing:-.045em;margin:8px 0 24px}
+    .about-hero h1 em{font-style:normal;color:var(--green)}
+    .about-lead{max-width:650px;color:var(--muted);font-size:18px;line-height:1.75}
+    .about-photo{max-width:430px;margin-left:auto;width:100%}
+    .about-photo img{aspect-ratio:4/5;object-fit:cover;filter:grayscale(10%)}
+    .about-section{display:grid;grid-template-columns:280px 1fr;gap:70px;padding:70px 0;border-bottom:1px solid var(--line)}
+    .about-section h2{font-family:var(--serif);font-size:38px;line-height:1.1;letter-spacing:-.025em}
+    .about-copy{max-width:760px}
+    .about-copy p{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:18px}
+    .about-quote{margin:70px 0;padding:55px 60px;background:#eef1ed;border-left:4px solid var(--green)}
+    .about-quote p{font-family:var(--serif);font-size:clamp(28px,4vw,45px);line-height:1.18;letter-spacing:-.025em;max-width:900px}
+    .about-signature{font-family:var(--serif);font-size:22px!important;color:var(--ink)!important;margin-top:30px}
+    .about-actions{display:flex;gap:25px;flex-wrap:wrap;margin-top:25px}
+    @media(max-width:800px){
+      .about-hero{grid-template-columns:1fr;gap:35px;padding:65px 0 55px}
+      .about-photo{margin:0;max-width:500px}
+      .about-section{grid-template-columns:1fr;gap:18px;padding:55px 0}
+      .about-section h2{font-size:32px}
+      .about-quote{margin:55px 0;padding:38px 28px}
+    }
   </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html" aria-label="Perspectiva, inicio"><span class="brand-wordmark"><span class="brand-p">P</span>ERSPECTIVA</span></a>
-    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="site-menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav id="site-menu" class="site-nav" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a><a href="index.html#analisis">Análisis</a><a href="index.html#opinion">Opinión</a><a href="index.html#colombiano">Fútbol colombiano</a><a href="index.html#internacional">Internacional</a><a href="Escritos.html">Portafolio</a><a class="active" href="sobre-mi.html">Sobre mí</a>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Perspectiva, inicio">
+        <span class="brand-wordmark"><span class="brand-p">P</span>ERSPECTIVA</span>
+      </a>
 
-<main class="container">
-  <section class="about-page-hero">
-    <div>
-      <p class="eyebrow">SOBRE MÍ</p>
-      <h1>Jesús Andrés<br><em>Rojas Cordero.</em></h1>
-      <p class="lead">Soy estudiante de Comunicación Social y Periodismo y estoy construyendo mi camino dentro del periodismo deportivo. Perspectiva nace como el espacio donde quiero convertir mi interés por el fútbol en una forma de observar, investigar, analizar y contar historias.</p>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="site-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="site-menu" class="site-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#analisis">Análisis</a>
+        <a href="index.html#opinion">Opinión</a>
+        <a href="index.html#colombiano">Fútbol colombiano</a>
+        <a href="index.html#internacional">Internacional</a>
+        <a href="Escritos.html">Portafolio</a>
+        <a class="active" href="sobre-mi.html">Sobre mí</a>
+      </nav>
     </div>
-    <div class="about-page-photo"><img src="imagenes/Snapchat-1939099584.jpg" alt="Jesús Andrés Rojas Cordero"></div>
-  </section>
+  </header>
 
-  <section class="about-block">
-    <div><p class="eyebrow">01 · QUIÉN SOY</p><h2>Una mirada en construcción.</h2></div>
-    <div>
-      <p>Me interesa el fútbol más allá del resultado. Quiero entender qué hay detrás de una decisión, de un partido, de un proyecto deportivo y de las historias que rodean a quienes hacen parte de este deporte.</p>
-      <p>Mi formación en Comunicación Social y Periodismo me permite juntar dos intereses que considero inseparables: contar bien una historia y tratar de comprenderla antes de contarla. Por eso este sitio no pretende ser solamente una colección de textos, sino un registro de mi evolución como periodista.</p>
+  <main class="container about-page">
+    <section class="about-hero">
+      <div>
+        <p class="eyebrow">SOBRE MÍ</p>
+        <h1>Jesús Andrés<br><em>Rojas Cordero.</em></h1>
+        <p class="about-lead">Estudiante de Comunicación Social y Periodismo y creador de Perspectiva. Estoy construyendo mi camino dentro del periodismo deportivo a partir de una idea sencilla: el fútbol merece ser contado, pero también pensado.</p>
+      </div>
+      <div class="about-photo">
+        <img src="imagenes/Snapchat-1939099584.jpg" alt="Jesús Andrés Rojas Cordero">
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div>
+        <p class="eyebrow">01 · QUIÉN SOY</p>
+        <h2>La persona detrás de Perspectiva.</h2>
+      </div>
+      <div class="about-copy">
+        <p>Soy estudiante de Comunicación Social y Periodismo con un interés particular por el periodismo deportivo y, especialmente, por el fútbol. Mi formación combina la comunicación, la escritura y la búsqueda de contexto con una curiosidad constante por entender cómo funciona el deporte.</p>
+        <p>Me interesa mirar más allá del marcador: las decisiones, los protagonistas, los proyectos, las historias y las circunstancias que explican lo que ocurre dentro y fuera de la cancha.</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div>
+        <p class="eyebrow">02 · QUÉ HAGO</p>
+        <h2>Escribo, analizo y construyo.</h2>
+      </div>
+      <div class="about-copy">
+        <p>Perspectiva reúne mis análisis, opiniones, ejercicios periodísticos y trabajos relacionados con el fútbol colombiano e internacional. También funciona como un espacio para experimentar con diferentes formas de contar una historia.</p>
+        <p>Mi interés está especialmente en el análisis del juego, el contexto de los equipos y las historias que existen detrás de una noticia. El objetivo es desarrollar una voz propia sin separar la opinión del rigor y la investigación periodística.</p>
+      </div>
+    </section>
+
+    <section class="about-quote">
+      <p>“No quiero limitarme a contar lo que pasó. Quiero aprender a explicar por qué pasó, qué significa y qué hay detrás de la historia.”</p>
+    </section>
+
+    <section class="about-section">
+      <div>
+        <p class="eyebrow">03 · QUÉ QUIERO PROYECTAR</p>
+        <h2>Una voz periodística propia.</h2>
+      </div>
+      <div class="about-copy">
+        <p>Quiero construir una identidad profesional basada en la curiosidad, el análisis y la capacidad de comunicar ideas con claridad. Aspiro a que mi trabajo pueda ser reconocido por la forma de observar el fútbol y no únicamente por los temas sobre los que escribo.</p>
+        <p>Perspectiva es parte de ese proceso. Es mi espacio para publicar, experimentar, construir un portafolio y documentar mi evolución como comunicador y futuro periodista deportivo.</p>
+        <p class="about-signature">Jesús Andrés Rojas Cordero</p>
+        <div class="about-actions">
+          <a class="text-link" href="Escritos.html">Ver mi portafolio <span>→</span></a>
+          <a class="text-link" href="index.html">Volver al inicio <span>→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <span class="brand-wordmark"><span class="brand-p">P</span>ERSPECTIVA</span>
+        <p>Periodismo deportivo desde otro ángulo.</p>
+      </div>
+      <div class="footer-links">
+        <a href="Escritos.html">Portafolio</a>
+        <a href="index.html">Inicio</a>
+      </div>
+      <p class="copyright">© 2026 Jesús Andrés Rojas Cordero</p>
     </div>
-  </section>
+  </footer>
 
-  <section class="about-block">
-    <div><p class="eyebrow">02 · QUÉ HAGO</p><h2>Periodismo deportivo.</h2></div>
-    <div>
-      <p>Escribo análisis, opiniones y piezas sobre fútbol colombiano e internacional. También reúno aquí trabajos universitarios, ejercicios periodísticos y proyectos que hacen parte de mi formación.</p>
-      <p>Mi interés está especialmente en el análisis del juego, el contexto de los equipos y las historias que muchas veces quedan ocultas detrás de una noticia. La intención es desarrollar una voz propia sin perder el rigor periodístico.</p>
-    </div>
-  </section>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.site-nav');
 
-  <section class="vision">
-    <p>“No quiero limitarme a contar lo que pasó. Quiero aprender a explicar por qué pasó, qué significa y qué hay detrás de la historia.”</p>
-  </section>
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    });
 
-  <section class="about-block">
-    <div><p class="eyebrow">03 · QUÉ QUIERO PROYECTAR</p><h2>Una voz propia.</h2></div>
-    <div>
-      <p>Quiero construir una identidad profesional basada en la curiosidad, el análisis y la capacidad de comunicar ideas de manera clara. Aspiro a que mi trabajo pueda ser reconocido no solamente por hablar de fútbol, sino por aportar una perspectiva sobre él.</p>
-      <p>Perspectiva es, en ese sentido, un proyecto personal y profesional. Es el lugar donde ensayo mi estilo, construyo mi portafolio y documento el camino que estoy recorriendo para convertirme en periodista deportivo.</p>
-      <p class="about-signature">Jesús Andrés Rojas Cordero</p>
-      <div class="about-actions"><a class="text-link" href="Escritos.html">Ver mi portafolio <span>→</span></a><a class="text-link" href="index.html">Volver al inicio <span>→</span></a></div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div><span class="brand-wordmark"><span class="brand-p">P</span>ERSPECTIVA</span><p>Periodismo deportivo desde otro ángulo.</p></div>
-    <div class="footer-links"><a href="Escritos.html">Portafolio</a><a href="index.html">Inicio</a></div>
-    <p class="copyright">© 2026 Jesús Andrés Rojas Cordero</p>
-  </div>
-</footer>
-
-<script>
-const toggle=document.querySelector('.menu-toggle'),menu=document.querySelector('.site-nav');
-toggle.addEventListener('click',()=>{const open=menu.classList.toggle('is-open');toggle.setAttribute('aria-expanded',open);toggle.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});
-document.querySelectorAll('.site-nav a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('is-open');toggle.setAttribute('aria-expanded','false')}));
-</script>
+    document.querySelectorAll('.site-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
